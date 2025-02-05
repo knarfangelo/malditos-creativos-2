@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  width: 100%;
+  height: 116vw;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1vw;
+  position: relative;
+}
+
+.nombres .card {
+  font-size: 1.5vw;
+  color: gray;
+  padding: 1vw;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+.nombres .card.active {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.video {
+  left: 0;
+  top: 10vw;
+  width: 20vw;
+  height: 25vw;
+  right: 1vw;
+  position: sticky;
+}
+
+.video video {
+  width: 100%;
+  border-radius: 1.5vw;
+  object-fit: cover;
+  height: 100%;
+  position: absolute;
+}
+.space {
+  height: 250vw;
+}

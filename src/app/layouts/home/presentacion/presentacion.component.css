@@ -1,0 +1,53 @@
+header{
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 3vw;
+}
+
+main{
+  width: 30%;
+}
+
+video {
+  width: 70%;
+  cursor: pointer;
+  border-radius: 1.5vw;
+}
+
+main > p:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.1vw solid #000;
+  padding-bottom: 1.5vw;
+  width: 20vw;
+}
+
+main p:nth-child(3){
+  width: 20vw;
+}
+
+main h2 {
+  font-size: 5vw;
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 3vw;
+}
+
+.buttons button {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50vw;
+  border: 0;
+  border: 0.1vw solid #000;
+}
+
+.buttons button img {
+  width: 50%;
+}
+.left {
+  transform: rotate(180deg);
+}
