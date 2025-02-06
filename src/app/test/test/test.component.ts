@@ -14,10 +14,10 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
     <div class="caja" #caja4>CAJA 4</div>
   </section>
   <section class="video">
-    <video #video1 hidden muted loop autoplay src="presentation/Richy.mp4"></video>
-    <video #video2 hidden muted loop autoplay src="presentation/Fatima.mp4"></video>
-    <video #video3 hidden muted loop autoplay src="presentation/Jaime.mp4"></video>
-    <video #video4 hidden muted loop autoplay src="presentation/Brando.mp4"></video>
+    <video #video1 class="video-item" muted loop autoplay src="presentation/Richy.mp4"></video>
+    <video #video2 class="video-item" muted loop autoplay src="presentation/Fatima.mp4"></video>
+    <video #video3 class="video-item" muted loop autoplay src="presentation/Jaime.mp4"></video>
+    <video #video4 class="video-item" muted loop autoplay src="presentation/Brando.mp4"></video>
   </section>
   <div class="space"></div>
   `,
@@ -68,17 +68,17 @@ export class TestComponent implements AfterViewInit {
 
   onCajaInCenter(index: number) {
     if (this.activeVideo) {
-      this.activeVideo.hidden = true;
+      this.activeVideo.classList.remove('visible-video');
       this.activeVideo.pause();
     }
     this.activeVideo = this.videos[index];
-    this.activeVideo.hidden = false;
+    this.activeVideo.classList.add('visible-video');
     this.activeVideo.play();
   }
 
   onCajaOutOfView(index: number) {
     if (this.videos[index] === this.activeVideo) {
-      this.activeVideo.hidden = true;
+      this.activeVideo.classList.remove('visible-video');
       this.activeVideo.pause();
       this.activeVideo = null;
     }
