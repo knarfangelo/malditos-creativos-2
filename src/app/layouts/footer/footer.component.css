@@ -1,0 +1,56 @@
+footer{
+  display: flex;
+  padding: 5vw;
+}
+
+.sitemap, .redes {
+  display: flex;
+  margin: 0;
+  gap: 3vw;
+}
+
+.sitemap p, .redes p {
+  margin: 0;
+  margin-top: 0.5vw;
+}
+.sitemap a, .redes a {
+  text-decoration: none;
+  color: #000;
+  font-size: 3vw;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-left: auto;
+  gap: 3vw;
+}
+
+.contacto .info p{
+  margin: 0;
+}
+
+.contacto .info {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.contacto .info p:nth-child(1){
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+}
+.contacto .info p:nth-child(2){
+  font-size: 2vw;
+}
+
+.sitemap p:nth-child(1), .redes p:nth-child(2){
+  font-size: 1vw;
+}

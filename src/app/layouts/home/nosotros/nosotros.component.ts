@@ -1,103 +1,157 @@
-import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
-import { InViewportDirective } from '../../../directives/InViewport.directive';
+import { Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 @Component({
   selector: 'app-nosotros',
-  imports: [],
-  schemas: [],
   template: `
+      <header #headerElement>
+        <section class="contenedor">
+          <div class="caja" #caja1>
+            <h1>Brando</h1>
+            <p>La Estrella, <strong>Founder</strong></p>
+          </div>
+          <div class="caja" #caja2>
+            <h1>Jaime</h1>     
+            <p>El Presi, <strong>Founder</strong></p> 
+          </div>
+          <div class="caja" #caja3>
+            <h1>Thais</h1>            
+            <p>La pulpo, <strong>Project Manager</strong></p>
+          </div>
+          <div class="caja" #caja4>
+            <h1>Brandon</h1>
+            <p>Mago del Vector, <strong>Graphic Designs</strong></p>     
+          </div>
+          <div class="caja" #caja5>
+            <h1>Richy</h1>
+            <p>Tarantino,<strong>Audio Visual Producer</strong></p>
+          </div>
+          <div class="caja" #caja6>
+            <h1>Fatima</h1>
+            <p>Head of Copies,<strong>Social Media Manager</strong></p>
+          </div>
+          <div class="caja" #caja7>
+            <h1>Sergio</h1>
+            <p>Lobo de la computación,<strong>Head of It</strong> </p>
+          </div>
+          <div class="caja" #caja8>
+            <h1>Frank</h1>
+            <p>Loco Angular, <strong>Full Stack</strong> </p>
+          </div>
+          <div class="caja" #caja9>
+            <h1>Luis</h1>
+            <p>Hard Code, <strong>Senior Developer</strong></p>
+          </div>
+        </section>
+      </header>
 
-  <header>
-    <section class="nombres">
-      <h3>Our formula: a global perspective
-      </h3>
-    <div class="card" #card>
-    <h1>Brando Gallesi</h1>
-    <p>Co-founder & Art Director, Having his good taste is a blessing and a burden</p>
-    </div>
-    <div class="card">
-    <h1>Jaime Ganoza</h1>
-    <p>Co-founder & Art Director, Having his good taste is a blessing and a burden</p>
-    </div>
-    <div class="card">
-    <h1>Thais</h1>
-    <p>Co-founder & Art Director, Having his good taste is a blessing and a burden</p>
-    </div>
-    <div class="card">
-    <h1>Fatima</h1>
-    <p>Co-founder & Art Director, Having his good taste is a blessing and a burden</p>
-    </div>
-    <div class="card">
-    <h1>Sergio</h1>
-    <p>Co-founder & Art Director, Having his good taste is a blessing and a burden</p>
-    </div>
-    <div class="card">
-    <h1>Brando</h1>
-    <p>Co-founder & Art Director, Having his good taste is a blessing and a burden</p>
-    </div>
-    <div class="card">
-    <h1>Frank</h1>
-    <p>Co-founder & Art Director, Havig his good taste is a blessing and a burden</p>
-    </div>
-    </section>
-    <section class="video">
-      <video muted autoplay loop src="presentation/Brando.mp4"></video>
-      <video muted autoplay loop src="presentation/Jaime.mp4"></video>
-      <video muted autoplay loop src="presentation/Thais.mp4"></video>
-      <video muted autoplay loop src="presentation/Fatima.mp4"></video>
-      <video muted autoplay loop src="presentation/Sergio.mp4"></video>
-      <video muted autoplay loop src="presentation/Brandon.mp4"></video>
-      <video muted autoplay loop src="presentation/Frank.mp4"></video>
-    </section>
-  </header>
+      <section class="videos" #videosSection style="display: none;">
+        <video #video1 hidden muted loop autoplay src="presentation/Brando.mp4"></video>
+        <video #video2 hidden muted loop autoplay src="presentation/Jaime.mp4"></video>
+        <video #video3 hidden muted loop autoplay src="presentation/Thais.mp4"></video>
+        <video #video4 hidden muted loop autoplay src="presentation/Brandon.mp4"></video>
+        <video #video5 hidden muted loop autoplay src="presentation/Richy.mp4"></video>
+        <video #video6 hidden muted loop autoplay src="presentation/Fatima.mp4"></video>
+        <video #video7 hidden muted loop autoplay src="presentation/Sergio.mp4"></video>
+        <video #video8 hidden muted loop autoplay src="presentation/Frank.mp4"></video>
+        <video #video9 hidden muted loop autoplay src="presentation/Luis.mp4"></video>
+      </section>
   `,
-  styleUrl: './nosotros.component.css',
+  styleUrls: ['./nosotros.component.css'],
 })
-export class NosotrosComponent{
+export class NosotrosComponent {
 
-  @ViewChild('card', { static: false }) card!: ElementRef;
-  private observer!: IntersectionObserver;
+  @ViewChild('video1') video1!: ElementRef;
+  @ViewChild('video2') video2!: ElementRef;
+  @ViewChild('video3') video3!: ElementRef;
+  @ViewChild('video4') video4!: ElementRef;
+  @ViewChild('video5') video5!: ElementRef;
+  @ViewChild('video6') video6!: ElementRef;
+  @ViewChild('video7') video7!: ElementRef;
+  @ViewChild('video8') video8!: ElementRef;
+  @ViewChild('video9') video9!: ElementRef;
+  @ViewChild('videosSection') videosSection!: ElementRef;
+  @ViewChild('headerElement') headerElement!: ElementRef;
+
+  private videos: HTMLVideoElement[] = [];
+  private activeVideo: HTMLVideoElement | null = null;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit() {
-    console.log("Hola Mundo");
-    if (isPlatformBrowser(this.platformId)) {  // Verifica que esté en el navegador
-      const cardElement = this.card.nativeElement;
+    if (isPlatformBrowser(this.platformId)) {
+      gsap.registerPlugin(ScrollTrigger);
 
-      this.observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            const bounding = cardElement.getBoundingClientRect();
-            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-            const middleOfViewport = viewportHeight / 2;
+      this.videos = [
+        this.video1.nativeElement, this.video2.nativeElement, this.video3.nativeElement,
+        this.video4.nativeElement, this.video5.nativeElement, this.video6.nativeElement,
+        this.video7.nativeElement, this.video8.nativeElement, this.video9.nativeElement
+      ];
 
-            // Calcula el centro del elemento
-            const elementCenter = bounding.top + bounding.height / 2;
+      const cajas = document.querySelectorAll('.caja');
 
-            // Verifica si el centro del elemento está dentro de un rango cerca del centro del viewport
-            const isCentered = Math.abs(elementCenter - middleOfViewport) < bounding.height / 3;
+      // Sección de videos aparece cuando el header entra en el viewport
+      ScrollTrigger.create({
+        trigger: this.headerElement.nativeElement,
+        start: "top 50%",
+        end: "bottom 50%",
+        onEnter: () => this.showVideos(),
+        onLeave: () => this.hideVideos(),
+        onEnterBack: () => this.showVideos(),
+        onLeaveBack: () => this.hideVideos(),
+      });
 
-            if (isCentered) {
-              console.log('💡 El elemento está en el centro del viewport');
-              // Aquí puedes ejecutar cualquier acción adicional
-            }
+      cajas.forEach((caja, index) => {
+        gsap.to(
+          caja,
+          { 
+            scrollTrigger: {
+              trigger: caja,
+              start: "top 50%",
+              end: "bottom 50%",
+              scrub: true,
+              onEnter: () => this.onCajaInCenter(index),
+              onEnterBack: () => this.onCajaInCenter(index),
+              onLeave: () => this.onCajaOutOfView(index),
+              onLeaveBack: () => this.onCajaOutOfView(index),
+            },
           }
-        },
-        {
-          root: null, // Se observa en relación al viewport
-          threshold: [0] // Activar cuando el elemento entre en el viewport
-        }
-      );
-
-      this.observer.observe(cardElement);
+        );
+      });
     }
   }
 
-  ngOnDestroy() {
-    if (this.observer) {
-      this.observer.disconnect();
+  showVideos() {
+    this.videosSection.nativeElement.style.display = 'block';
+  }
+
+  hideVideos() {
+    this.videosSection.nativeElement.style.display = 'none';
+  }
+
+  onCajaInCenter(index: number) {
+    if (this.activeVideo) {
+      this.activeVideo.hidden = true;
+      this.activeVideo.pause();
     }
+    this.activeVideo = this.videos[index];
+    this.activeVideo.hidden = false;
+    this.activeVideo.play();
+
+    const cajas = document.querySelectorAll('.caja');
+    cajas[index].classList.add('active');
+  }
+
+  onCajaOutOfView(index: number) {
+    if (this.videos[index] === this.activeVideo) {
+      this.activeVideo.hidden = true;
+      this.activeVideo.pause();
+      this.activeVideo = null;
+    }
+
+    const cajas = document.querySelectorAll('.caja');
+    cajas[index].classList.remove('active');
   }
 }

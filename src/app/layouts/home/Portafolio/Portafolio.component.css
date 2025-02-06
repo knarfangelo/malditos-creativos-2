@@ -8,11 +8,12 @@ header h1, header h2 {
   box-sizing: border-box;
   padding: 1vw;
   gap: 1vw;
+  overflow: hidden;
 }
 
 
 
-.card img {
+.card-portafolio img {
   width: 100%;
   height: 30vw;
 }

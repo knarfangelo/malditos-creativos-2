@@ -6,7 +6,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 @Component({
   selector: 'app-test',
   template: `
-  <div class="space"></div>
+  <header>
   <section class="contenedor">
     <div class="caja" #caja1>CAJA 1</div>
     <div class="caja" #caja2>CAJA 2</div>
@@ -14,12 +14,12 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
     <div class="caja" #caja4>CAJA 4</div>
   </section>
   <section class="video">
-    <video #video1 class="video-item" muted loop autoplay src="presentation/Richy.mp4"></video>
-    <video #video2 class="video-item" muted loop autoplay src="presentation/Fatima.mp4"></video>
-    <video #video3 class="video-item" muted loop autoplay src="presentation/Jaime.mp4"></video>
-    <video #video4 class="video-item" muted loop autoplay src="presentation/Brando.mp4"></video>
+    <video #video1 hidden muted loop autoplay src="presentation/Richy.mp4"></video>
+    <video #video2 hidden muted loop autoplay src="presentation/Fatima.mp4"></video>
+    <video #video3 hidden muted loop autoplay src="presentation/Jaime.mp4"></video>
+    <video #video4 hidden muted loop autoplay src="presentation/Brando.mp4"></video>
   </section>
-  <div class="space"></div>
+  </header>
   `,
   styleUrls: ['./test.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -46,9 +46,9 @@ export class TestComponent implements AfterViewInit {
       cajas.forEach((caja, index) => {
         gsap.fromTo(
           caja,
-          { opacity: 0, y: 0 },
+          { opacity: 1, y: 1 },
           { 
-            opacity: 1, y: 0,
+            opacity: 1, y: 1,
             scrollTrigger: {
               markers: true,
               trigger: caja,
@@ -68,17 +68,17 @@ export class TestComponent implements AfterViewInit {
 
   onCajaInCenter(index: number) {
     if (this.activeVideo) {
-      this.activeVideo.classList.remove('visible-video');
+      this.activeVideo.hidden = true;
       this.activeVideo.pause();
     }
     this.activeVideo = this.videos[index];
-    this.activeVideo.classList.add('visible-video');
+    this.activeVideo.hidden = false;
     this.activeVideo.play();
   }
 
   onCajaOutOfView(index: number) {
     if (this.videos[index] === this.activeVideo) {
-      this.activeVideo.classList.remove('visible-video');
+      this.activeVideo.hidden = true;
       this.activeVideo.pause();
       this.activeVideo = null;
     }
