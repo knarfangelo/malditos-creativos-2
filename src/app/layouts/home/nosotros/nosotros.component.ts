@@ -38,7 +38,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
           </div>
           <div class="caja" #caja8>
             <h1>Frank</h1>
-            <p>Loco Angular, <strong>Full Stack</strong> </p>
+            <p>Loco Angular, stron Full Stack</p>
           </div>
           <div class="caja" #caja9>
             <h1>Luis</h1>

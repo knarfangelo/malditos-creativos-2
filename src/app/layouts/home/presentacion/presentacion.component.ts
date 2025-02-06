@@ -18,7 +18,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         <button><img src="icons/flechaSwiper.svg" alt=""></button>
       </section>
       </main>      
-        <video autoplay muted loop src="presentation/presentation.mp4"></video>
+        <video autoplay muted loop src="presentation/Presentation.webm"></video>
     </header>
 
   
