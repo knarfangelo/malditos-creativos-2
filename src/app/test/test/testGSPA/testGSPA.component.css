@@ -1,26 +1,63 @@
-.caja {
-  display: flex;
-  width: 100%;
-  height: auto;
-  margin: auto;
-}
-.space {
-  display: flex;
-  width: 100%;
+/* 📌 Estilos generales */
+body {
+  font-family: Arial, sans-serif;
   height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+  cursor: none; /* Ocultar cursor predeterminado */
 }
-.caja:nth-child(1){
-  background-color: hsl(0, 50%, 50%);
+
+.content {
+  text-align: center;
+  padding: 50px;
 }
-.caja:nth-child(2){
-  background-color: hsl(15, 50%, 50%);
+
+/* 🖱 Cursor personalizado */
+.custom-cursor {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  z-index: 9999;
 }
-.caja:nth-child(3){
-  background-color: hsl(25, 50%, 50%);
+
+/* 🗺️ Sitemap Menú */
+.sitemap {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  z-index: 1000;
+  min-width: 180px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  pointer-events: none;
 }
-.caja:nth-child(4){
-  background-color: hsl(35, 50%, 50%);
+
+.sitemap ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-.caja:nth-child(5){
-  background-color: hsl(45, 50%, 50%);
+
+.sitemap ul li {
+  margin: 10px 0;
+}
+
+.sitemap ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.sitemap ul li a:hover {
+  color: blue;
 }
