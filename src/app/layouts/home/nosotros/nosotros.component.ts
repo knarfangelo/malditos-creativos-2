@@ -150,7 +150,6 @@ export class NosotrosComponent {
       this.activeVideo.pause();
       this.activeVideo = null;
     }
-
     const cajas = document.querySelectorAll('.caja');
     cajas[index].classList.remove('active');
   }

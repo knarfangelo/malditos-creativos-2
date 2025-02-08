@@ -5,22 +5,20 @@ import { ServiciosComponent } from "../../layouts/home/servicios/servicios.compo
 import { PortafolioComponent } from "../../layouts/home/Portafolio/Portafolio.component";
 import { NosotrosComponent } from "../../layouts/home/nosotros/nosotros.component";
 import { FooterComponent } from "../../layouts/footer/footer.component";
+import { PanelHomeComponent } from "../../layouts/home/panelHome/panelHome.component";
 
 @Component({
   selector: 'app-home',
-  imports: [NavegacionComponent, PresentacionComponent, ServiciosComponent, PortafolioComponent, NosotrosComponent, FooterComponent],
+  imports: [NavegacionComponent, PresentacionComponent, ServiciosComponent, PortafolioComponent, NosotrosComponent, FooterComponent, PanelHomeComponent],
   template: `
 
-    <app-navegacion></app-navegacion>
     <header>
-      <h1>Malditos</h1>
-      <img class="logo" src="icons/logo.svg" alt="">
-      <h1>Creativos</h1>
-      <app-presentacion></app-presentacion>
-      <app-servicios></app-servicios>
-      <app-portafolio></app-portafolio>
-      <app-nosotros></app-nosotros>
-      <app-footer></app-footer>
+      <app-panel-home></app-panel-home>
+          <app-presentacion></app-presentacion>
+          <app-servicios></app-servicios>
+          <app-portafolio></app-portafolio>
+          <app-nosotros></app-nosotros>
+          <app-footer></app-footer>
     </header>
   
   `,

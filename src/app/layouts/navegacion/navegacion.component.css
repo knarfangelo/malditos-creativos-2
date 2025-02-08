@@ -25,7 +25,7 @@ nav a {
 }
 
 nav a:nth-child(1){
-  background-color: red;
+  background-color: #D94443;
   border-radius: 5vw;
   padding: 1.0vw;
   color: #fff;
@@ -37,7 +37,7 @@ nav a:nth-child(3) img{
   padding: 1.0vw;
   color: #fff;
   border-radius: 5vw;
-  background-color: red;
+  background-color: #D94443;
 }
 
 .menu {
@@ -46,6 +46,6 @@ nav a:nth-child(3) img{
   justify-content: center;
   color: #fff;
   width: 7vw;
-  background-color: red;
+  background-color: #D94443;
   border-radius: 5vw;
 }

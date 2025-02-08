@@ -31,6 +31,10 @@ header{
   background-color: #EF4B4A;
   color: #fff;
 }
+.card:nth-child(5){
+  background-color: #7ae970;
+  color: #000;
+}
 
 .card  h2 {
   font-size: 5vw;

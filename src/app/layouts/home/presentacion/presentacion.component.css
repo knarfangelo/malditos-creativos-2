@@ -2,6 +2,7 @@ header{
   display: flex;
   box-sizing: border-box;
   align-items: center;
+  justify-content: space-around;
   padding: 3vw;
 }
 
@@ -51,6 +52,28 @@ main h2 {
 .left {
   transform: rotate(180deg);
 }
+
+.video {
+  width: 50vw;
+  display: flex;
+  transform: translateY(-25vw) translateX(-58vw) scale(0.3);
+}
+
+swiper-slide p {
+  width: 50%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 @media(width < 900px){
   header {
