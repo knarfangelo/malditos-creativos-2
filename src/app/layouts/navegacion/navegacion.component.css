@@ -49,3 +49,74 @@ nav a:nth-child(3) img{
   background-color: #D94443;
   border-radius: 5vw;
 }
+
+.cerebrito img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.vamos {
+  position: relative;
+}
+.cerebrito {
+  display: inline-block;
+  position: absolute;
+  background-color: #D94443;
+  z-index: -1;
+  border-radius: 3vw;
+  box-sizing: border-box;
+  padding: 0.5vw;
+  width: 3vw;
+  height: 3vw;  top: 0;
+  right: 0;
+  transition: transform 0.4s ease-in-out;
+  transform-origin: center; /* La rotación ocurre desde el centro */
+}
+
+/* Cuando pasas el mouse, inicia la animación */
+.vamos:hover .cerebrito {
+  animation: moverYGirar 1s ease-in-out forwards;
+}
+
+/* Cuando quitas el hover, vuelve a su estado original */
+.vamos:not(:hover) .cerebrito {
+  animation: moverYGirarReverse 0.6s ease-in-out forwards;
+}
+
+/* Animación con tres estados */
+@keyframes moverYGirar {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(5vw) rotate(180deg);
+  }
+  100% {
+    transform: translateX(3.0vw) rotate(-4deg);
+  }
+
+}
+
+/* Animación inversa (regresando) */
+@keyframes moverYGirarReverse {
+  0% {
+    transform: translateX(3vw) rotate(-4deg);
+  }
+  100% {
+    transform: translateX(0) rotate(-180deg);
+  }
+}
+
+.servicio {
+  display: flex;
+  background-color: #D94443;
+  align-items: center;
+  color: #fff;
+  border-radius: 5vw;
+}
+.servicio a{
+  color: #fff;
+  padding: 1vw;
+}
+

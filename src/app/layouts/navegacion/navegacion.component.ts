@@ -4,13 +4,26 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'app-navegacion',
   imports: [],
   template: `
-  <div class="space"></div>
     <nav>
-      <a href="">Let's work</a>
+      <a href="" class="vamos">Let's work<div class="cerebrito">
+        <img src="icons/cerebrito.svg" alt="">
+      </div></a>
       <a href="">Agencia de Marketing</a>      
-      <a href=""><span class="menu">Menu</span><img src="icons/flecha.svg" alt="flechaMC"></a>      
+      <a href="" class="sitemap" (mouseenter)="toggleMenu(true)" 
+      (mouseleave)="toggleMenu(false)" ><span class="menu">Menu</span>
+      <img src="icons/flecha.svg" alt="flechaMC">
+      </a>      
     </nav>
   `,
+  animations:[],
   styleUrl: './navegacion.component.css',
 })
-export class NavegacionComponent { }
+export class NavegacionComponent {
+
+  mostrarMenu = false; // Estado inicial oculto
+
+  toggleMenu(estado: boolean) {
+    this.mostrarMenu = estado;
+  }
+
+}

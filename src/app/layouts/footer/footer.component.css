@@ -54,3 +54,45 @@ footer{
 .sitemap p:nth-child(1), .redes p:nth-child(2){
   font-size: 1vw;
 }
+
+@media (width < 900px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sitemap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .redes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .redes {
+    flex-direction: column;
+  }
+
+  .info {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contacto {
+    margin: 0;
+  }
+
+  footer .sitemap p,footer .redes p,footer .contacto .info {
+    font-size: 4vw;
+    margin: 0;
+  }
+  footer .contacto .info p {
+    margin: 0;
+  }
+
+  .sitemap .info a {
+    font-size: 8vw;
+  }
+}

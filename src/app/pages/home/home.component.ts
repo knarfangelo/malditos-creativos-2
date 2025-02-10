@@ -11,16 +11,15 @@ import { PanelHomeComponent } from "../../layouts/home/panelHome/panelHome.compo
   selector: 'app-home',
   imports: [NavegacionComponent, PresentacionComponent, ServiciosComponent, PortafolioComponent, NosotrosComponent, FooterComponent, PanelHomeComponent],
   template: `
-
-    <header>
-      <app-panel-home></app-panel-home>
-          <app-presentacion></app-presentacion>
-          <app-servicios></app-servicios>
-          <app-portafolio></app-portafolio>
-          <app-nosotros></app-nosotros>
-          <app-footer></app-footer>
-    </header>
-  
+  <header>
+    <app-navegacion></app-navegacion>
+    <app-panel-home></app-panel-home>
+    <app-presentacion></app-presentacion>
+    <app-servicios></app-servicios>
+    <app-portafolio></app-portafolio>
+    <app-nosotros></app-nosotros>
+    <app-footer></app-footer>
+  </header>
   `,
   styleUrl: './home.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

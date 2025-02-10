@@ -1,0 +1,129 @@
+
+header {
+  background-color: #EEE7E1;
+}
+.panel-inicial {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.panel-inicial {
+  font-size: 3vw;
+  
+}
+
+.panel-inicial h1, .panel-inicial h2 {
+  margin: 0;
+}
+
+
+
+.planes {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3vw 0;
+}
+
+.planes .plan-1, .planes .plan-2 {
+  display: flex;
+  flex-direction: column;
+  border-left: 0.1vw solid gray;
+  padding: 2vw;
+}
+
+.numero {
+  font-size: 10vw;
+  font-weight: bold;
+}
+
+.plan-1 ul li, .plan-2 ul li{
+  padding: 0.5vw;
+}
+
+swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+swiper-slide img {
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+.empresas-aliadas {
+  padding: 5vw 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.empresas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3.5vw;
+}
+
+.diagrama h1 {
+  padding: 3vw;
+}
+
+.vertical {
+  display: none;
+}
+
+.horizontal {
+  display: block;
+}
+
+
+@media (width < 1100px){
+
+  .horizontal {
+    display: none;
+  }
+
+  .vertical {
+    display: block;
+  }
+
+  .panel-inicial {
+    height: 40vw;
+    font-size: 5vw;
+  }
+
+  .planes {
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+  .numero {
+    font-size: 25vw;
+  }
+
+  .planes .plan-1, .planes .plan-2 {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    border-left: 0.1vw solid gray;
+    padding: 2vw;
+  }
+  .empresas-aliadas {
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .empresas {
+    grid-template-columns: 1fr;
+    width: 50%;
+    gap: 10vw;
+  }
+  .empresas img {
+    width: 100%;
+  }
+}
