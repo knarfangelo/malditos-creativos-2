@@ -1,7 +1,12 @@
 import { isPlatformBrowser } from '@angular/common';
-import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, Inject, PLATFORM_ID } from '@angular/core';
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { register } from 'swiper/element';
 import { FooterComponent } from "../../layouts/footer/footer.component";
+import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-creacion-contenido',
@@ -17,29 +22,29 @@ import { FooterComponent } from "../../layouts/footer/footer.component";
           <div class="plan-1">
             <h1>La entradita</h1>
             <ul>
-              <li>Diseño profesional de una Landing Page</li>
-              <li>Integración con redes sociales.</li>
-              <li>Mapa de ubicación (Google Maps).</li>
-              <li>Diseño responsive optimizado para carga rápida</li>
-              <li>Hosting por un año</li>
-              <li>Configuración básica de SEO.</li>
+              <li><p>Diseño profesional de una Landing Page</p></li>
+              <li><p>Integración con redes sociales.</p></li>
+              <li><p>Mapa de ubicación (Google Maps).</p></li>
+              <li><p>Diseño responsive optimizado para carga rápida</p></li>
+              <li><p>Hosting por un año</p></li>
+              <li><p>Configuración básica de SEO.</p></li>
             </ul>
-            <div class="numero">
+            <h3 class="numero">
               01
-            </div>
+            </h3>
           </div>
           <div class="plan-2">
             <h1>El menú completo</h1>
             <ul>
-              <li>Todo lo incluido en "La entradita".</li>
-              <li>Sitio web de HASTA 5 páginas (Inicio, Servicios, Nosotros, Blog, Contacto).</li>
-              <li>Blog con capacidad para publicar artículos y galería de fotos.</li>
-              <li>Formulario de contacto dinámico (especificar qué lo hace "dinámico").</li>
-              <li>Fashion, Consumer Goods, Green Tech, Fintech, Industry 4.0</li>
+              <li><p>Todo lo incluido en "La entradita".</p></li>
+              <li><p>Sitio web de HASTA 5 páginas (Inicio, Servicios, Nosotros, Blog, Contacto).</p></li>
+              <li><p>Blog con capacidad para publicar artículos y galería de fotos.</p></li>
+              <li><p>Formulario de contacto dinámico (especificar qué lo hace "dinámico").</p></li>
+              <li><p>Fashion, Consumer Goods, Green Tech, Fintech, Industry 4.0</p></li>
             </ul>
-            <div class="numero">
+            <h3 class="numero">
               02
-            </div>
+    </h3>
           </div>
         </section>
         <section class="swiper-websites">
@@ -69,9 +74,9 @@ import { FooterComponent } from "../../layouts/footer/footer.component";
             </swiper-container>
         </section>
         <section class="diagrama">
-        <h1>Asi es como crearemos tu Web</h1>
-        <img class="horizontal" src="diagramas/disenio-web.svg" alt="diagrama de diseño web">
-        <img class="vertical" src="diagramas/disenio-web-v.svg" alt="diagrama de diseño web en vertical">
+          <h1>Asi es como crearemos tu Web</h1>
+          <img class="horizontal" src="diagramas/disenio-web.svg" alt="diagrama de diseño web">
+          <img class="vertical" src="diagramas/disenio-web-v.svg" alt="diagrama de diseño web en vertical">
         </section>
         <section class="empresas-aliadas">
           <h1>Empresas aliadas:</h1>
@@ -87,21 +92,31 @@ import { FooterComponent } from "../../layouts/footer/footer.component";
     </header>
   
   `,
-  styleUrl: './creacion-contenido.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrl: './creacion-contenido.component.css' 
 })
 export class CreacionContenidoComponent {
 
-    constructor(
-      @Inject(PLATFORM_ID) private platformId: Object,
-    ) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private el: ElementRef) {}
 
-    ngAfterViewInit() {
-      if (isPlatformBrowser(this.platformId)) {
-        register();
-      }
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      register();
+      const elements = this.el.nativeElement.querySelectorAll('h1, h2, h3, p, a');
+
+      elements.forEach((element: HTMLElement) => {
+        gsap.to(element, {
+          clipPath: "inset(0 0 0 0)", // Hace visible el texto
+          duration: 0.1, // Duración de la animación
+          opacity: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%", // Activa cuando el elemento entra al 80% del viewport
+            toggleActions: "play none none none", // Solo se ejecuta una vez
+          }
+        });
+      });
     }
-
-
+  }
 
 }

@@ -38,11 +38,14 @@ header {
 
 .numero {
   font-size: 10vw;
+  margin: 0;
   font-weight: bold;
 }
 
-.plan-1 ul li, .plan-2 ul li{
+.plan-1 ul li p, .plan-2 ul li p{
   padding: 0.5vw;
+  font-size: 1vw;
+  text-align: start;
 }
 
 swiper-slide {
@@ -81,6 +84,19 @@ swiper-slide img {
   display: block;
 }
 
+h1,
+h2,
+h3,
+p,
+a {
+ font-size: 3.5vw;
+ opacity: 0;
+ text-align: center;
+ clip-path: inset(100% 0 0 0); /* Inicialmente oculto */
+ transition: clip-path 0.5s;
+}
+
+
 
 @media (width < 1100px){
 
@@ -93,8 +109,12 @@ swiper-slide img {
   }
 
   .panel-inicial {
-    height: 40vw;
+    height: 60vw;
     font-size: 5vw;
+  }
+
+  .panel-inicial h1, .panel-inicial h2 {
+    font-size: 10vw;
   }
 
   .planes {
@@ -102,9 +122,6 @@ swiper-slide img {
     gap: 5vw;
   }
 
-  .numero {
-    font-size: 25vw;
-  }
 
   .planes .plan-1, .planes .plan-2 {
     display: flex;
@@ -125,5 +142,18 @@ swiper-slide img {
   }
   .empresas img {
     width: 100%;
+  }
+
+  .plan-1 ul li p, .plan-2 ul li p{
+    padding: 0.5vw;
+    font-size: 4vw;
+  }
+  .numero {
+    font-size: 40vw;
+    font-weight: bold;
+    letter-spacing: -3.0vw;
+  }
+  .empresas-aliadas h1 {
+    font-size: 10vw;
   }
 }

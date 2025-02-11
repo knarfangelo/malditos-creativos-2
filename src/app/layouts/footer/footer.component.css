@@ -60,6 +60,7 @@ footer{
   footer {
     flex-direction: column;
     align-items: center;
+    gap: 5vw;
   }
 
   .sitemap {
