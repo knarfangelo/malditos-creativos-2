@@ -143,3 +143,21 @@ header h1:nth-child(3){
   width: 50%;
   height: 50%;
 }
+
+
+@media (width < 1200px) {
+  header {
+    height: auto;
+    padding-top: 3vw;
+  }
+  main {
+    height: auto;
+  }
+  main .elemento, main .elemento2 {
+    font-size: 10vw;
+  }
+
+  .logo {
+    width: 20vw;
+  }
+}

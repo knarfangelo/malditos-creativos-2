@@ -6,8 +6,8 @@ nav {
   box-sizing: border-box;
   position: fixed;
   z-index: 100;
-  padding: 0.5vw;
-  font-size: 1.0vw;
+  padding: 0.5vh;
+  font-size: 2.6vh;
   font-weight: bold;
   top: 0;
 }
@@ -15,7 +15,7 @@ nav {
 .space {
   display: flex;
   width: 100%;
-  height: 2vw;
+  height: 4vw;
   background-color: #EEE7E1;
 }
 
@@ -67,8 +67,8 @@ nav a:nth-child(3) img{
   border-radius: 3vw;
   box-sizing: border-box;
   padding: 0.5vw;
-  width: 3vw;
-  height: 3vw;  top: 0;
+  width: 3.5vw;
+  height: 3.5vw;  top: 0;
   right: 0;
   transition: transform 0.4s ease-in-out;
   transform-origin: center; /* La rotación ocurre desde el centro */
@@ -120,3 +120,29 @@ nav a:nth-child(3) img{
   padding: 1vw;
 }
 
+@media ( width < 900px ) {
+  nav {
+    font-size: 3.5vw !important;
+    padding: 3vw;
+  }
+
+  nav a:nth-child(1){
+    background-color: #D94443;
+    border-radius: 5vw;
+    padding: 2.0vw;
+    color: #fff;
+  }
+  nav a:nth-child(3){
+    display: flex;
+  }
+  nav a:nth-child(3) img{
+    padding: 2.0vw;
+    color: #fff;
+    border-radius: 5vw;
+    background-color: #D94443;
+  }
+  .menu {
+    width: 15vw;
+  }
+
+}

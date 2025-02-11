@@ -1,5 +1,4 @@
-header{
-
+header{  
   display: flex;
   flex-direction: column;
   background-color: #EEE7E1;
@@ -26,3 +25,4 @@ header h1:nth-child(3){
   width: 14vw;
   margin: auto;
 }
+

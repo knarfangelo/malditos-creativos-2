@@ -20,7 +20,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class NavegacionComponent {
 
-  mostrarMenu = false; // Estado inicial oculto
+  mostrarMenu = false; 
 
   toggleMenu(estado: boolean) {
     this.mostrarMenu = estado;

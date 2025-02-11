@@ -68,7 +68,7 @@ export class PresentacionComponent {
           start: "top center",
           end: "350% center",
           scrub: true,
-          markers: true,
+          markers: false,
         },
       });
 

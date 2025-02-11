@@ -14,7 +14,7 @@ import { PanelHomeComponent } from "../../layouts/home/panelHome/panelHome.compo
   <header>
     <app-navegacion></app-navegacion>
     <app-panel-home></app-panel-home>
-    <app-presentacion></app-presentacion>
+    <app-presentacion class="presentacion-1"></app-presentacion>
     <app-servicios></app-servicios>
     <app-portafolio></app-portafolio>
     <app-nosotros></app-nosotros>

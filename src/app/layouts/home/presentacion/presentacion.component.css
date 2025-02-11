@@ -3,7 +3,7 @@ header{
   box-sizing: border-box;
   align-items: center;
   justify-content: space-around;
-  padding: 3vw;
+  padding: 6vw 3vw;
 }
 
 main{
@@ -79,6 +79,7 @@ swiper-slide p {
   header {
     display: flex;
     flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   main{
@@ -113,5 +114,7 @@ swiper-slide p {
     width: 100%;
     padding: 5vw 0;
   }
+
+
 
 }
