@@ -1,39 +1,39 @@
 import { isPlatformBrowser } from '@angular/common';
-import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 import { register } from 'swiper/element';
-import { FooterComponent } from "../../layouts/footer/footer.component";
-import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { FooterComponent } from '../../layouts/footer/footer.component';
 import { NavegacionComponent } from '../../layouts/navegacion/navegacion.component';
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
-  selector: 'app-creacion-contenido',
+  selector: 'app-disenio-contenido',
   imports: [FooterComponent, NavegacionComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
-    <header>
+
+<header>
     <app-navegacion></app-navegacion>
         <section class="panel-inicial">
-        <h1 class="titulo">CREACION DE CONTENIDO</h1>
+        <h1 class="titulo">DISEÑO DE CONTENIDO</h1> 
         </section>
         <section class="planes">
           <div class="plan-1">
-            <h1>La Entradita (S/ 899)</h1>
-            <h2> ¡Dale vida a tus redes sociales con contenido fresco y atractivo!</h2>
-            <p>"La Entradita" te ofrece un paquete de contenido esencial para mantener tus redes sociales activas y enganchar a tu audiencia. Videos cortos, carruseles, historias… ¡todo lo que necesitas para empezar a generar impacto!</p>
-            <p>¡Consigue tu Entradita de Creación de Contenido!</p>
+            <h1>Pack Digital Inicial (S/ 1299)</h1>
+            <h2>¡Pack Digital Inicial: Diseño y Contenido para Emprender con Éxito!</h2>
+            <p>El Pack Digital Inicial te brinda las bases para construir una presencia online sólida.  Obtén un logotipo profesional, una identidad visual atractiva y contenido creativo para tus redes sociales, todo en un solo paquete.</p>
+            <p>¡Comienza con el Pack Digital Inicial!</p>
             <h3 class="numero">
               01
             </h3>
           </div>
           <div class="plan-2">
-            <h1>El Menú Completo (S/ 1699)</h1>
-            <h2>¡Contenido profesional para redes sociales con grabación en estudio incluida!</h2>
-            <p>"El Menú Completo" te lleva al siguiente nivel con una estrategia de contenido integral y la producción profesional de tus videos en nuestro estudio. Formato original,  equipos de alta calidad y un equipo experto para maximizar tu impacto en redes sociales.</p>
-            <p> ¡Impulsa tu negocio con el Menú Completo!</p>
+            <h1>Pack Digital Profesional (S/ 2699)</h1>
+            <h2>¡Pack Digital Profesional: Impulsa tu Negocio con una Estrategia Integral!</h2>
+            <p>El Pack Digital Profesional te ofrece una solución completa para destacar en el mundo digital. Diseño de marca profesional, contenido de alta calidad, grabación en estudio y una estrategia integral para maximizar tu alcance en redes sociales.</p>
+            <p> ¡Alcanza tus objetivos con el Pack Digital Profesional!</p>
             <h3 class="numero">
               02
     </h3>
@@ -66,9 +66,9 @@ gsap.registerPlugin(ScrollTrigger);
             </swiper-container>
         </section>
         <section class="diagrama">
-          <h1>Ruta de creacion de contenido</h1>
-          <img class="horizontal" src="diagramas/creacion-contenido.svg" alt="diagrama de diseño web">
-          <img class="vertical" src="diagramas/creacion-contenido-v.svg" alt="diagrama de diseño web en vertical">
+          <h1>Ruta de diseño de contenido</h1>
+          <img class="horizontal" src="diagramas/disenio-contenido.svg" alt="diagrama de diseño web">
+          <img class="vertical" src="diagramas/disenio-contenido-v.svg" alt="diagrama de diseño web en vertical">
         </section>
         <section class="empresas-aliadas">
           <h1>Empresas aliadas:</h1>
@@ -83,10 +83,12 @@ gsap.registerPlugin(ScrollTrigger);
         <app-footer></app-footer>
     </header>
   
+  
   `,
-  styleUrl: './creacion-contenido.component.css' 
+  styleUrl: './disenio-contenido.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreacionContenidoComponent {
+export class DisenioContenidoComponent {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private el: ElementRef) {}
 

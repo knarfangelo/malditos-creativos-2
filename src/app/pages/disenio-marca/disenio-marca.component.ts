@@ -1,42 +1,42 @@
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
+import { FooterComponent } from '../../layouts/footer/footer.component';
+import { NavegacionComponent } from '../../layouts/navegacion/navegacion.component';
 import { isPlatformBrowser } from '@angular/common';
-import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { register } from 'swiper/element';
-import { FooterComponent } from "../../layouts/footer/footer.component";
-import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { NavegacionComponent } from '../../layouts/navegacion/navegacion.component';
 
 gsap.registerPlugin(ScrollTrigger);
-
 @Component({
-  selector: 'app-creacion-contenido',
-  imports: [FooterComponent, NavegacionComponent],
+  selector: 'app-disenio-marca',
+  imports:[FooterComponent, NavegacionComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  template: `
-    <header>
+  template: `  
+  <header>
     <app-navegacion></app-navegacion>
         <section class="panel-inicial">
-        <h1 class="titulo">CREACION DE CONTENIDO</h1>
+        <h1 class="titulo">DISEÑO DE MARCA</h1>
         </section>
         <section class="planes">
           <div class="plan-1">
-            <h1>La Entradita (S/ 899)</h1>
-            <h2> ¡Dale vida a tus redes sociales con contenido fresco y atractivo!</h2>
-            <p>"La Entradita" te ofrece un paquete de contenido esencial para mantener tus redes sociales activas y enganchar a tu audiencia. Videos cortos, carruseles, historias… ¡todo lo que necesitas para empezar a generar impacto!</p>
-            <p>¡Consigue tu Entradita de Creación de Contenido!</p>
+            <h1>La Entradita (S/ 799)</h1>
+            <h2>
+            ¡Dale identidad a tu marca sin gastar una fortuna!
+            </h2>
+            <p> Con "La Entradita", obtén un paquete de diseño gráfico esencial para comenzar a construir tu imagen de marca. Logotipo, paleta de colores, tipografías y gráficas para redes sociales, todo lo que necesitas para dar una primera impresión profesional.</p>
+            <p>¡Consigue tu Entradita de Diseño Gráfico!</p>
             <h3 class="numero">
               01
             </h3>
           </div>
           <div class="plan-2">
-            <h1>El Menú Completo (S/ 1699)</h1>
-            <h2>¡Contenido profesional para redes sociales con grabación en estudio incluida!</h2>
-            <p>"El Menú Completo" te lleva al siguiente nivel con una estrategia de contenido integral y la producción profesional de tus videos en nuestro estudio. Formato original,  equipos de alta calidad y un equipo experto para maximizar tu impacto en redes sociales.</p>
-            <p> ¡Impulsa tu negocio con el Menú Completo!</p>
+            <h1>El Menú Completo (S/ 1599)</h1>
+            <h2>¡Branding profesional con Manual de Marca incluido!</h2>
+            <p>"El Menú Completo" te ofrece una solución integral de branding para consolidar tu imagen de marca.  Además de un logotipo impactante, gráficas para redes sociales y diseños para perfiles, recibirás un Manual de Marca que te guiará en la correcta aplicación de tu identidad visual en todos tus canales de comunicación.</p>
+            <p>¡Invierte en tu marca con el Menú Completo!</p>
             <h3 class="numero">
               02
-    </h3>
+            </h3>
           </div>
         </section>
         <section class="swiper-websites">
@@ -66,9 +66,9 @@ gsap.registerPlugin(ScrollTrigger);
             </swiper-container>
         </section>
         <section class="diagrama">
-          <h1>Ruta de creacion de contenido</h1>
-          <img class="horizontal" src="diagramas/creacion-contenido.svg" alt="diagrama de diseño web">
-          <img class="vertical" src="diagramas/creacion-contenido-v.svg" alt="diagrama de diseño web en vertical">
+          <h1>Asi es como crearemos tu Web</h1>
+          <img class="horizontal" src="diagramas/disenio-grafico.svg" alt="diagrama de diseño web">
+          <img class="vertical" src="diagramas/disenio-grafico-v.svg" alt="diagrama de diseño web en vertical">
         </section>
         <section class="empresas-aliadas">
           <h1>Empresas aliadas:</h1>
@@ -83,10 +83,12 @@ gsap.registerPlugin(ScrollTrigger);
         <app-footer></app-footer>
     </header>
   
+  
   `,
-  styleUrl: './creacion-contenido.component.css' 
+  styleUrl: './disenio-marca.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreacionContenidoComponent {
+export class DisenioMarcaComponent {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private el: ElementRef) {}
 

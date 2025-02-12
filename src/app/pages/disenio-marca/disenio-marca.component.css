@@ -99,6 +99,7 @@ a,
  transition: clip-path 0.5s;
 }
 
+
 .plan-1, .plan-2 {
   width: 30%;
 }
@@ -137,7 +138,6 @@ a,
   .plan-1 h1, .plan-2 h1 {
     font-size: 6vw;
   }
-  
   
 
   .horizontal {

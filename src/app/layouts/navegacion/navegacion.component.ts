@@ -1,33 +1,48 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+import { RouterLink, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navegacion',
-  imports: [],
+  imports: [CommonModule, RouterModule],
   template: `
+    <div class="space"></div>
     <nav>
-      <a href="" class="vamos">Comenzemos<div class="cerebrito">
-        <img src="icons/cerebrito.svg" alt="">
-      </div></a>
-      <a href="">Agencia de Marketing</a>
-      <a href="" class="sitemap" (mouseenter)="toggleMenu(true)"
-      (mouseleave)="toggleMenu(false)" ><span class="menu">Menu
-      </span>
-      <img src="icons/flecha.svg" alt="flechaMC">
-      </a>
-      
-
+    <a href="#">Empezemos</a>
+      <a class="titulo" href="#">Agencia de Marketing</a>
+      <div class="sites" (click)="toggleMenu()">Menu</div>
+      <div class="menu" [@menuAnimation]="menuAbierto ? 'visible' : 'oculto'">
+        <a href="creacion-contenido">
+          Creacion de contenido
+        </a>
+        <a href="disenio-marca">
+          Diseño de marca
+        </a>
+        <a href="website">
+          Website
+        </a>
+        <a href="disenio-contenido">
+          Diseño & Contenido
+        </a>
+      </div>
     </nav>
   `,
-  animations:[],
+  animations: [
+    trigger('menuAnimation', [
+      state('oculto', style({ opacity: 0, transform: 'scaleY(0)' })),
+      state('visible', style({ opacity: 1, transform: 'scaleY(1)' })),
+      transition('oculto <=> visible', animate('300ms ease-in-out')),
+    ]),
+  ],
   styleUrl: './navegacion.component.css',
 })
 export class NavegacionComponent {
 
-  mostrarMenu = false;
-
-  toggleMenu(estado: boolean) {
-    this.mostrarMenu = estado;
+  menuAbierto = false;
+  
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
   }
-
 
 }

@@ -7,21 +7,21 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
    <footer>
         <section class="sitemap">
-          <p>EXPLORE</p>
-          <section class="info">
-            <a href="">Work</a>
-            <a href="">About</a>
-            <a href="">Services</a>
-            <a href="">Blog</a>
+          <p>SERVICIOS</p>
+          <section class="servicios">
+            <a href="creacion-contenido" target="_blank">Creacion de Contenido</a>
+            <a href="disenio-marca" target="_blank">Diseño de marca</a>
+            <a href="website" target="_blank">Website</a>
+            <a href="disenio-contenido" target="_blank">Diseño & Contenido</a>
           </section>
         </section>
         <section class="redes">
-          <p>STALK US</p>
+          <p>REDES</p>
           <section class="info">
-          <a href="https://x.com/AgenciaMalditos" target="_blank">X corp</a>
-          <a href="https://www.tiktok.com/@malditoscreativosagencia" target="_blank">Tiktok</a>
-          <a href="https://www.youtube.com/@MalditosCreativosAgencia/shorts" target="_blank">Youtube</a>
-          <a href="https://www.instagram.com/malditoscreativosagencia/" target="_blank">Instagram</a>
+          <a href="https://x.com/AgenciaMalditos" target="_blank"><img src="redes/x.svg" alt=""></a>
+          <a href="https://www.tiktok.com/@malditoscreativosagencia" target="_blank"><img src="redes/tiktok.svg" alt=""></a>
+          <a href="https://www.youtube.com/@MalditosCreativosAgencia/shorts" target="_blank"><img src="redes/youtube.svg" alt=""></a>
+          <a href="https://www.instagram.com/malditoscreativosagencia/" target="_blank"><img src="redes/instagram.svg" alt=""></a>
           </section>
         </section>
         <section class="contacto">

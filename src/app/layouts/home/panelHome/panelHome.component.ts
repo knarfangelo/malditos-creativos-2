@@ -29,8 +29,6 @@ export class PanelHomeComponent {
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       gsap.registerPlugin(ScrollTrigger); 
-
-      
           gsap.to(".logo", {
             rotation: 360, // Rota el logo completamente
             scale: 1, // Aumenta su tamaño 1.5x

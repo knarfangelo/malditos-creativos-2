@@ -64,19 +64,7 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
           </div>
         </div>
         <img class="imagen" src="servicios/disenio-contenido.jpeg" alt="">
-      </section>
-      <section class="card" appScrollAnimationServicios>
-        <div class="contenedor">
-          <h2>Stream & <br> Podcast</h2>
-          <div class="info">
-            <p>Conecta con tu audiencia a través del audio y video en directo. Comparte tu mensaje, crea una comunidad y amplía tu alcance con transmisiones profesionales.</p>
-            <p>Grabaciones <br>
-              Equipo profesional (cámara, micrófono, luces) <br>
-              Guiones y grilla de grabación <br></p>
-          </div>
-        </div>
-        <img class="imagen" src="servicios/disenio-contenido.jpeg" alt="">
-      </section>
+      </section>  
     </main>
   </header>
 
