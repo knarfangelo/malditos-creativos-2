@@ -5,14 +5,17 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [],
   template: `
     <nav>
-      <a href="" class="vamos">Let's work<div class="cerebrito">
+      <a href="" class="vamos">Comenzemos<div class="cerebrito">
         <img src="icons/cerebrito.svg" alt="">
       </div></a>
-      <a href="">Agencia de Marketing</a>      
-      <a href="" class="sitemap" (mouseenter)="toggleMenu(true)" 
-      (mouseleave)="toggleMenu(false)" ><span class="menu">Menu</span>
+      <a href="">Agencia de Marketing</a>
+      <a href="" class="sitemap" (mouseenter)="toggleMenu(true)"
+      (mouseleave)="toggleMenu(false)" ><span class="menu">Menu
+      </span>
       <img src="icons/flecha.svg" alt="flechaMC">
-      </a>      
+      </a>
+      
+
     </nav>
   `,
   animations:[],
@@ -20,10 +23,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class NavegacionComponent {
 
-  mostrarMenu = false; 
+  mostrarMenu = false;
 
   toggleMenu(estado: boolean) {
     this.mostrarMenu = estado;
   }
+
 
 }

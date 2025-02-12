@@ -56,11 +56,12 @@ main h2 {
 .video {
   width: 50vw;
   display: flex;
-  transform: translateY(-25vw) translateX(-58vw) scale(0.3);
+  transform: translateY(-27vw) translateX(-58vw) scale(0.3);
 }
 
 swiper-slide p {
   width: 50%;
+  text-transform: capitalize;
 }
 
 @keyframes fadeInUp {
@@ -85,7 +86,7 @@ swiper-slide p {
   main{
     width: 95%;
   }
-  
+
   main > p:nth-child(1) {
     display: flex;
     justify-content: space-between;
@@ -107,7 +108,7 @@ swiper-slide p {
     height: 15vw;
     border-radius: 50vw;
     border: 0;
-    border: 0.1vw solid #000;
+
   }
 
   video {
@@ -116,5 +117,13 @@ swiper-slide p {
   }
 
 
+  main h2 {
+    font-size: 20vw;
+  }
+
+  swiper-slide p {
+    width: 100%;
+    font-size: 4vw;
+  }
 
 }

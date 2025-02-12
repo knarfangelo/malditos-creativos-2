@@ -11,78 +11,72 @@ nav {
   font-weight: bold;
   top: 0;
 }
-
-.space {
-  display: flex;
-  width: 100%;
-  height: 4vw;
-  background-color: #EEE7E1;
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3vw;
 }
 
-nav a {
-  text-decoration: none;
+nav a:nth-child(2){
   color: #000;
 }
 
-nav a:nth-child(1){
-  background-color: #D94443;
-  border-radius: 5vw;
-  padding: 1.0vw;
-  color: #fff;
-}
-nav a:nth-child(3){
+nav .vamos {
   display: flex;
-}
-nav a:nth-child(3) img{
-  padding: 1.0vw;
-  color: #fff;
-  border-radius: 5vw;
   background-color: #D94443;
+  position: relative;
+  padding: 0.8vw;
+  border-radius: 3vw;
 }
 
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  width: 7vw;
+.cerebrito {
+  width: 3vw;
+  height: 3vw;
+  position: absolute;
+  z-index: -1;
   background-color: #D94443;
-  border-radius: 5vw;
+  border-radius: 3vw;
+  top: 0;
+  right: 0;
 }
 
 .cerebrito img {
-  display: flex;
   width: 100%;
-  height: 100%;
-}
-
-.vamos {
-  position: relative;
-}
-.cerebrito {
-  display: inline-block;
-  position: absolute;
-  background-color: #D94443;
-  z-index: -1;
-  border-radius: 3vw;
   box-sizing: border-box;
   padding: 0.5vw;
-  width: 3.5vw;
-  height: 3.5vw;  top: 0;
-  right: 0;
-  transition: transform 0.4s ease-in-out;
-  transform-origin: center; /* La rotación ocurre desde el centro */
 }
 
-/* Cuando pasas el mouse, inicia la animación */
-.vamos:hover .cerebrito {
-  animation: moverYGirar 1s ease-in-out forwards;
+
+.sitemap {
+  display: flex;
+
 }
 
-/* Cuando quitas el hover, vuelve a su estado original */
-.vamos:not(:hover) .cerebrito {
-  animation: moverYGirarReverse 0.6s ease-in-out forwards;
+.sitemap .menu {
+  background-color: #D94443;
+  padding: 0vw 2vw;
+  display: flex;
+  align-items: center;
+  border-radius: 3vw;
 }
+
+.sitemap img {
+  background-color: #D94443;
+  box-sizing: border-box;
+  padding: 1vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 3vw;
+}
+
+.sites {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
 
 /* Animación con tres estados */
 @keyframes moverYGirar {
@@ -108,41 +102,27 @@ nav a:nth-child(3) img{
   }
 }
 
-.servicio {
-  display: flex;
-  background-color: #D94443;
-  align-items: center;
-  color: #fff;
-  border-radius: 5vw;
-}
-.servicio a{
-  color: #fff;
-  padding: 1vw;
-}
-
 @media ( width < 900px ) {
-  nav {
-    font-size: 3.5vw !important;
-    padding: 3vw;
+
+  .cerebrito {
+    display: none;
   }
 
-  nav a:nth-child(1){
-    background-color: #D94443;
-    border-radius: 5vw;
-    padding: 2.0vw;
-    color: #fff;
+  a {
+    font-size: 3vw;
   }
-  nav a:nth-child(3){
-    display: flex;
-  }
-  nav a:nth-child(3) img{
-    padding: 2.0vw;
-    color: #fff;
-    border-radius: 5vw;
-    background-color: #D94443;
+
+  .sitemap {
+    height: 7vw;
   }
   .menu {
-    width: 15vw;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .sitemap img {
+    display: none;
   }
 
 }

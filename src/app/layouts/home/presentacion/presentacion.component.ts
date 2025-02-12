@@ -8,7 +8,7 @@ import { SwiperOptions } from 'swiper/types';
 @Component({
   selector: 'app-presentacion',
   imports: [],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
     <header>
       <main>
@@ -25,38 +25,45 @@ import { SwiperOptions } from 'swiper/types';
             <p>marcas personales e influencers que trabajan con nosotros</p>
           </swiper-slide>
           <swiper-slide>
-            <p>paginas web realizadas</p>
+            <p>páginas web realizadas</p>
           </swiper-slide>
         </swiper-container>
         <section class="buttons">
-          <button #prevBtn (click)="prevSlide()"><img class="left" src="icons/flechaSwiper.svg" alt=""></button>
-          <button #nextBtn (click)="nextSlide()"><img src="icons/flechaSwiper.svg" alt=""></button>
+          <button #prevBtn (click)="prevSlide()">
+            <img class="left" src="icons/flechaSwiper.svg" alt="">
+            <div class="progress-border" #progressPrev></div>
+          </button>
+          <button #nextBtn (click)="nextSlide()">
+            <img src="icons/flechaSwiper.svg" alt="">
+            <div class="progress-border" #progressNext></div>
+          </button>
         </section>
-      </main>      
+      </main>
       <video class="video" autoplay muted loop src="presentation/Presentation.webm"></video>
     </header>
   `,
   styleUrl: './presentacion.component.css',
 })
 export class PresentacionComponent {
-  numero: number = 40; // Número inicial
-  pageNumbers: string[] = ["01", "02", "03", "04"]; // Páginas
-  page: string = this.pageNumbers[0]; // Página actual
-  numerosSlides: number[] = [40, 20, 15, 50]; // Valores para cada slide
+  numero: number = 40;
+  pageNumbers: string[] = ["01", "02", "03", "04"];
+  page: string = this.pageNumbers[0];
+  numerosSlides: number[] = [40, 20, 15, 50];
   swiperInstance: any;
 
   @ViewChild("swiperFactos") swiperFactos!: ElementRef;
+  @ViewChild("progressPrev") progressPrev!: ElementRef;
+  @ViewChild("progressNext") progressNext!: ElementRef;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private cdRef: ChangeDetectorRef // Forzar detección de cambios
+    private cdRef: ChangeDetectorRef
   ) {}
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-      gsap.registerPlugin(ScrollTrigger);
       register();
-
+      gsap.registerPlugin(ScrollTrigger);
       gsap.to(".video", {
         x: "0",
         y: "0",
@@ -72,38 +79,57 @@ export class PresentacionComponent {
         },
       });
 
-      // Configuración de Swiper
       const swiperParams: SwiperOptions = {
         slidesPerView: 1,
+        loop: true,
+        autoplay: {
+          delay: 6000,
+          disableOnInteraction: false,
+        },
       };
 
       Object.assign(this.swiperFactos.nativeElement, swiperParams);
       this.swiperFactos.nativeElement.initialize();
 
-      // Esperamos a que Swiper se inicialice antes de asignar eventos
       setTimeout(() => {
         this.swiperInstance = this.swiperFactos.nativeElement.swiper;
         this.swiperInstance.on('slideChange', () => this.cambiarNumero());
+        this.iniciarCargaBorde();
       }, 100);
     }
   }
 
   cambiarNumero() {
-    const activeIndex = this.swiperInstance.activeIndex; // Obtiene el índice del slide activo
-    this.numero = this.numerosSlides[activeIndex] || 0; // Asigna el número correspondiente
-    this.page = this.pageNumbers[activeIndex] || "01"; // Actualiza la página
-    this.cdRef.detectChanges(); // 🔥 Forzar detección de cambios
+    const activeIndex = this.swiperInstance.realIndex;
+    const targetNumber = this.numerosSlides[activeIndex] || 0;
+    this.page = this.pageNumbers[activeIndex] || "01";
+    gsap.fromTo(this, { numero: 0 }, { numero: targetNumber, duration: 1.0, roundProps: "numero", ease: "power2.out", onUpdate: () => this.cdRef.detectChanges() });
+    this.iniciarCargaBorde();
   }
 
   prevSlide() {
     if (this.swiperInstance) {
-      this.swiperInstance.slidePrev(); // ⬅ Mover al slide anterior
+      this.swiperInstance.slidePrev();
+      this.iniciarCargaBorde();
     }
   }
 
   nextSlide() {
     if (this.swiperInstance) {
-      this.swiperInstance.slideNext(); // ➡ Mover al siguiente slide
+      this.swiperInstance.slideNext();
+      this.iniciarCargaBorde();
     }
+  }
+
+  iniciarCargaBorde() {
+    gsap.to([this.progressPrev.nativeElement, this.progressNext.nativeElement], {
+      width: '100%',
+      duration: 4,
+      ease: 'linear',
+      onComplete: () => {
+        this.swiperInstance.slideNext();
+        this.iniciarCargaBorde();
+      },
+    });
   }
 }
