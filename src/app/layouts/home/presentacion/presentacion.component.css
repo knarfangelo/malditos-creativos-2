@@ -35,7 +35,7 @@ main h2 {
 
 .buttons {
   display: flex;
-  gap: 3vw;
+  gap: 2vw;
 }
 
 .buttons button {
@@ -44,6 +44,7 @@ main h2 {
   border-radius: 50vw;
   border: 0;
   border: 0.1vw solid #000;
+  cursor: pointer;
 }
 
 .buttons button img {

@@ -4,14 +4,15 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { ScrollAnimationServiciosDirective } from '../../../directives/ScrollAnimationServicios.directive';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
+import { AnimacionEntradaDirective } from '../../../directives/animacionEntrada.directive';
 
 
 @Component({
   selector: 'app-servicios',
-  imports: [ScrollAnimationServiciosDirective],
+  imports: [ScrollAnimationServiciosDirective, AnimacionEntradaDirective],
   template: `
   <h1>Servicios</h1>
-  <header [@letterAnimation]>
+  <header>
     <main>
       <section class="card" appScrollAnimationServicios>
         <div class="contenedor">
@@ -25,7 +26,7 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
             Análisis de métricas
           </div>
         </div>
-        <img class="imagen" src="servicios/creacion-contenido.jpeg" alt="">
+        <img appAnimacionEntrada [animacionClase]="'animacion-girar'" class="imagen" src="servicios/creacion-contenido.jpeg" alt="">
       </section>
       <section class="card" appScrollAnimationServicios>
         <div class="contenedor">
@@ -38,7 +39,7 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
               Manual de marca</p>
           </div>
         </div>
-        <img class="imagen" src="servicios/disenio-marca.jpeg" alt="">
+        <img  appAnimacionEntrada [animacionClase]="'animacion-girar'" class="imagen" src="servicios/disenio-marca.jpeg" alt="">
       </section>
       <section class="card" appScrollAnimationServicios>
         <div class="contenedor">
@@ -53,7 +54,7 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
               Diseño responsive</p>
           </div>
         </div>
-        <img class="imagen" src="servicios/website.jpeg" alt="">
+        <img  appAnimacionEntrada [animacionClase]="'animacion-girar'" class="imagen" src="servicios/website.jpeg" alt="">
       </section>
       <section class="card" appScrollAnimationServicios>
         <div class="contenedor">
@@ -63,7 +64,7 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
             <p>UX Design, User Testing, Product Prototype, Mobile UI, Software UI design, Web app design, Interaction design</p>
           </div>
         </div>
-        <img class="imagen" src="servicios/disenio-contenido.jpeg" alt="">
+        <img  appAnimacionEntrada [animacionClase]="'animacion-girar'" class="imagen" src="servicios/disenio-contenido.jpeg" alt="">
       </section>  
     </main>
   </header>
@@ -71,16 +72,6 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
   `,
   styleUrl: './servicios.component.css',
   animations: [
-    trigger('letterAnimation', [
-      transition(':enter', [
-        query('h1, p, span', [
-          style({ transform: 'translateY(100%)', opacity: 0 }),
-          stagger(100, [
-            animate('500ms ease-out', style({ transform: 'translateY(0)', opacity: 1 }))
-          ])
-        ])
-      ])
-    ])
   ]
 })
 export class ServiciosComponent {

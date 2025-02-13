@@ -26,11 +26,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         </section>
         <section class="contacto">
           <div class="info">
-             <p>SAY HELLO</p>
-             <p>malditoscreativos&#64;gmail.com</p>
-          </div>
-          <div class="info">
-             <p>EXCEPTIONAL TALENT?</p>
+             <p>CONTACTO</p>
              <p>malditoscreativos&#64;gmail.com</p>
           </div>
         </section>

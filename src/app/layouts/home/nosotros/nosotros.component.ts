@@ -101,6 +101,7 @@ export class NosotrosComponent {
         onLeave: () => this.hideVideos(),
         onEnterBack: () => this.showVideos(),
         onLeaveBack: () => this.hideVideos(),
+        markers: false
       });
 
       cajas.forEach((caja, index) => {

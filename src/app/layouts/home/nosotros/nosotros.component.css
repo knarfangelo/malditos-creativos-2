@@ -1,5 +1,5 @@
 header {
-  padding: 10vw 1vw;
+  margin-bottom: 200px;
 }
 .contenedor{
   position: relative;
@@ -70,7 +70,7 @@ header {
 }
 
 header {
-  padding-bottom: 40vw;
+  margin-bottom: 40vw;
 }
 
 .caja h1 {

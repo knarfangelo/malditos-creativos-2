@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   template: `
     <div class="space"></div>
     <nav>
-    <a href="#">Empezemos</a>
+    <a href="#">¡Hagamoslo!</a>
       <a class="titulo" href="#">Agencia de Marketing</a>
       <div class="sites" (click)="toggleMenu()">Menu</div>
       <div class="menu" [@menuAnimation]="menuAbierto ? 'visible' : 'oculto'">

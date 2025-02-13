@@ -1,6 +1,8 @@
 footer{
   display: flex;
   gap: 2vw;
+  box-sizing: border-box;
+  padding: 1vw;
 }
 footer .sitemap {
   margin-right: 0;
@@ -23,6 +25,7 @@ footer .sitemap {
 
 .info {
   display: flex;
+  gap: 1vw;
 }
 
 .info a {
@@ -37,7 +40,7 @@ footer .sitemap {
 }
 
 .servicios {
-  font-size: 3vw;
+  font-size: 5vw;
   display: flex;
   flex-direction: column;
 }
@@ -88,6 +91,7 @@ footer .sitemap {
 
   .sitemap a {
     text-align: center;
+    font-size: 6vw;
   }
 
   .redes {
@@ -118,15 +122,12 @@ footer .sitemap {
     margin: 0;
   }
 
-  .sitemap .info a {
-    font-size: 8vw;
-  }
   .redes .info a {
-    font-size: 8vw;
+    width: 14vw;
+    height: 14vw;
   }
   .contacto .info p:nth-child(2) {
     font-size: 5vw;
   }
-
 
 }

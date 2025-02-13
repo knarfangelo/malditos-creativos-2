@@ -78,6 +78,20 @@ gsap.registerPlugin(ScrollTrigger);
             <img src="empresas/mercado-libre.svg" alt="mercado libre">
             <img src="empresas/nike.svg" alt="nike">
             <img src="empresas/samsung.svg" alt="samsung">
+            <img src="empresas/1-speed-demons.webp" alt="speed demons">
+            <img src="empresas/3-olva.webp" alt="olva">
+            <img src="empresas/4-saludpol.webp" alt="saludpol">
+            <img src="empresas/5-reed.webp" alt="reed">
+            <img src="empresas/6-edicom.webp" alt="edicom">
+            <img src="empresas/7-edupan.webp" alt="edupan">
+            <img src="empresas/8-valle-del-cauca.webp" alt="edupan">
+            <img src="empresas/9-santiago.webp" alt="santiago">
+            <img src="empresas/10-jrm.webp" alt="jrm soluciones integrales de almacenamiento">
+            <img src="empresas/12-claro.webp" alt="claro">
+            <img src="empresas/13-css-panama.webp" alt="panama">
+            <img src="empresas/14-jmt.webp" alt="jmt">
+            <img src="empresas/15-intercorp.webp" alt="jmt">
+            <img src="empresas/16-cesar-vallejo.webp" alt="cesar vallejo">
           </div>
         </section>
         <app-footer></app-footer>

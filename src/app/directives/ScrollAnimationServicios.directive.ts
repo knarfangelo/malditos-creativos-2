@@ -24,8 +24,8 @@ export class ScrollAnimationServiciosDirective {
           gsap.from(element, {
             scrollTrigger: {
               trigger: element,
-              start: 'center 30%',
-              end: 'center 20%',
+              start: 'center 50%',
+              end: 'center 30%',
               scrub: true,
               markers: true,
             },

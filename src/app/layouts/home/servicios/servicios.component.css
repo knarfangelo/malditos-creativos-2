@@ -7,12 +7,14 @@ header{
 
  h1 {
   padding-left: 3vw;
+  font-size: 2.5vw;
 }
 
 .card {
   display: flex;
   box-sizing: border-box;
   padding: 3vw;
+  overflow: hidden;
 }
 
 .card:nth-child(1){
@@ -59,12 +61,49 @@ header{
 
 .info p:nth-child(1){
   width: 20vw;
-  font-size: 1.0vw;
+  font-size: 1.5vw;
 }
 .info p:nth-child(2){
   width: 10vw;
-  font-size: 0.8vw;
+  font-size: 1vw;
 }
+
+/* 🔸 Animación predeterminada */
+.animacion-entrada {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.animacion-activa {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🔸 Animación personalizada - Girar */
+.animacion-girar-inicial {
+  opacity: 0;
+  transform: translateX(30vw);
+}
+
+.animacion-girar {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* 🔸 Animación personalizada - Escalar */
+.animacion-escalar-inicial {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.animacion-escalar {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
 
 
 @media (width < 900px){
