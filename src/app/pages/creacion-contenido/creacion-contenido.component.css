@@ -169,8 +169,8 @@ a,
   }
 
   .planes {
-    flex-direction: column;
-    gap: 5vw;
+    justify-content: space-evenly;
+     gap: 5vw;
   }
 
 

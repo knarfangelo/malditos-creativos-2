@@ -12,23 +12,9 @@ import { ScrollAnimationDirective } from '../../../directives/ScrollAnimation.di
 <h1 class="t-1">Influencers que representamos</h1>
 <h1 class="t-2">Los mejores de la industria</h1>
   <section class="contenedor">
-    <div class="card-portafolio" appScrollAnimation>
-      <img src="portafolio/portafolio1.jpg" alt="imagen 1">
-      <p>Teatros y musicales</p>
-    </div>
-    <div class="card-portafolio left" appScrollAnimation>
-      <img src="portafolio/portafolio2.jpg" alt="imagen 2">
-      <p>Series y novelas</p>
-    </div>
-    <div class="card-portafolio" appScrollAnimation>
-      <img src="portafolio/portafolio3.jpg" alt="imagen 3">
-      <p>Películas</p>
-    </div>
-    <div class="card-portafolio left" appScrollAnimation>
+    <a href="https://brandogallesi.malditoscreativos.com/" target="_blank" class="card-portafolio left" appScrollAnimation>
       <img src="portafolio/portafolio4.jpg" alt="imagen 4">
-      <p>Televisión en vivo
-      </p>
-    </div>
+    </a>
   </section>
 </header>
   `,
@@ -36,6 +22,8 @@ import { ScrollAnimationDirective } from '../../../directives/ScrollAnimation.di
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PortafolioComponent {
+
+  
 
 
 }
