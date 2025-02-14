@@ -23,7 +23,7 @@ import { CommonModule } from '@angular/common';
           Website
         </a>
         <a href="disenio-contenido">
-          Diseño & Contenido
+          PACK DIGITAL
         </a>
       </div>
     </nav>

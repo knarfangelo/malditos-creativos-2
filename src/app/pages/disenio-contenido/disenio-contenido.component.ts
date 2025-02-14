@@ -66,7 +66,7 @@ gsap.registerPlugin(ScrollTrigger);
             </swiper-container>
         </section>
         <section class="diagrama">
-          <h1>Ruta de Pack de Contenido</h1>
+          <h1>Ruta de tu PACK DIGITAL</h1>
           <img class="horizontal" src="diagramas/disenio-contenido.svg" alt="diagrama de diseño web">
           <img class="vertical" src="diagramas/disenio-contenido-v.svg" alt="diagrama de diseño web en vertical">
         </section>

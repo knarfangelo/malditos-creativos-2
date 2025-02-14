@@ -40,6 +40,7 @@ header {
   font-size: 10vw;
   margin: 0;
   font-weight: bold;
+  width: fit-content;
 }
 
 .plan-1 ul li p, .plan-2 ul li p{

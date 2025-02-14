@@ -9,38 +9,25 @@ import { ScrollAnimationDirective } from '../../../directives/ScrollAnimation.di
   imports: [ScrollAnimationDirective],
   template: `
 <header>
-  <h1>Europe's most aspiring</h1>
-  <h2>startups & scaleups</h2>
+<h1 class="t-1">Influencers que representamos</h1>
+<h1 class="t-2">Los mejores de la industria</h1>
   <section class="contenedor">
     <div class="card-portafolio" appScrollAnimation>
-      <img src="portafolio/img1.jpeg" alt="imagen 1">
-      <p>Rudy Capital | Turning crypto complexity into clarity</p>
-      <p>Strategy - Visual Identity - Website</p>
+      <img src="portafolio/portafolio1.jpg" alt="imagen 1">
+      <p>Teatros y musicales</p>
     </div>
     <div class="card-portafolio left" appScrollAnimation>
-      <img src="portafolio/img2.jpeg" alt="imagen 2">
-      <p>Rudy Capital | Turning crypto complexity into clarity</p>
-      <p>Strategy - Visual Identity - Website</p>
+      <img src="portafolio/portafolio2.jpg" alt="imagen 2">
+      <p>Series y novelas</p>
     </div>
     <div class="card-portafolio" appScrollAnimation>
-      <img src="portafolio/img3.jpeg" alt="imagen 3">
-      <p>Rudy Capital | Turning crypto complexity into clarity</p>
-      <p>Strategy - Visual Identity - Website</p>
+      <img src="portafolio/portafolio3.jpg" alt="imagen 3">
+      <p>Películas</p>
     </div>
     <div class="card-portafolio left" appScrollAnimation>
-      <img src="portafolio/img4.jpeg" alt="imagen 4">
-      <p>Rudy Capital | Turning crypto complexity into clarity</p>
-      <p>Strategy - Visual Identity - Website</p>
-    </div>
-    <div class="card-portafolio" appScrollAnimation>
-      <img src="portafolio/img5.jpeg" alt="imagen 5">
-      <p>Rudy Capital | Turning crypto complexity into clarity</p>
-      <p>Strategy - Visual Identity - Website</p>
-    </div>
-    <div class="card-portafolio left" appScrollAnimation>
-      <img src="portafolio/img6.png" alt="imagen 6">
-      <p>Rudy Capital | Turning crypto complexity into clarity</p>
-      <p>Strategy - Visual Identity - Website</p>
+      <img src="portafolio/portafolio4.jpg" alt="imagen 4">
+      <p>Televisión en vivo
+      </p>
     </div>
   </section>
 </header>
