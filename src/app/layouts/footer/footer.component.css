@@ -1,133 +1,116 @@
-footer{
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2vw;
+  margin: 0 2vw;
+}
+.primer-panel {
+  display: flex;
+  gap: 5vw;
+  width: 40%;
+  justify-content: space-between;
+}
+p {
+  margin: 0;
+}
+.sitemap {
   display: flex;
   gap: 2vw;
-  box-sizing: border-box;
-  padding: 1vw;
 }
-footer .sitemap {
-  margin-right: 0;
-}
-.sitemap, .redes {
+.sitemap .servicios{
   display: flex;
-  margin: 0;
-  gap: 3vw;
+  flex-direction: column;
+}
+.sitemap .servicios a{
+  display: flex;
+  text-wrap: nowrap;
+}
+.redes {
+  display: flex;
+  gap: 2vw;
 }
 
-.sitemap p, .redes p {
-  margin: 0;
-  margin-top: 0.5vw;
+.redes .info {
+  display: flex;
+  flex-direction: column;
 }
-.sitemap a, .redes a {
+
+.contacto {
+  display: flex;
+}
+
+img { 
+  width: 5vw;
+  height: 5vw;
+}
+.redes .info {
+  
+}
+.redes .info a {
+  width: 20vw;
+  height: 5vw;
+  display: flex;
+  align-items: center;
+  font-size: 1.5vw;
+  object-fit: cover;
+  gap: 0.5vw;
   text-decoration: none;
   color: #000;
-  font-size: 3vw;
 }
 
-.info {
-  display: flex;
-  gap: 1vw;
-}
 
-.info a {
-  font-size: 1.8vw;
-  padding: 0.5vw 0vw;
-  width: 4vw;
+.servicios a {
+  text-decoration: none;
+  color: #000;
 }
-
-.info a img {
-  width: 100%;
-  height: auto;
-}
-
-.servicios {
-  font-size: 5vw;
-  display: flex;
-  flex-direction: column;
-}
-
-.contacto{
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  margin-left: auto;
-  gap: 3vw;
-}
-
-.contacto .info p{
-  margin: 0;
-}
-
-.contacto .info {
-  display: flex;
-  flex-direction: column;
-  gap: 1vw;
-}
-
-.contacto .info p:nth-child(1){
-  display: flex;
-  width: fit-content;
-  margin-left: auto;
-}
-.contacto .info p:nth-child(2){
-  font-size: 2vw;
-}
-
-.sitemap p:nth-child(1), .redes p:nth-child(2){
+.titulo {
   font-size: 1vw;
+  font-weight: 700;
+  margin-top: 0.5vw;
+}
+
+.servicios, .info {
+  font-size: 2.5vw;
+  font-weight: 300;
+}
+
+.youtube img {
+  width: 4.1vw;
+  padding: 0.4vw;
+}
+
+.tiktok img {
+  border-radius: 1.0vw;
+  box-sizing: border-box;
+  padding: 0.35vw;
+}
+
+.instagram img {
+  width: 4vw;
+  padding: 0.5vw;
 }
 
 @media (width < 900px) {
-
   footer {
     flex-direction: column;
-    align-items: center;
-    gap: 5vw;
+    gap: 10vw;
   }
-
-  .sitemap {
+  .primer-panel {
     flex-direction: column;
-    align-items: center;
   }
-
-  .sitemap a {
-    text-align: center;
+  .titulo {
+    font-size: 4vw;
+  }
+  .servicios{
     font-size: 6vw;
   }
-
-  .redes {
-    flex-direction: column;
-    align-items: center;
+  .info{
+    font-size: 6vw;
   }
-
-  .redes {
-    flex-direction: column;
-  }
-
-  .info {
-    align-items: center;
-    justify-content: center;
-  }
-
-  .contacto {
-    margin: 0;
-  }
-
-  footer .sitemap p,footer .redes p,footer .contacto .info {
-    font-size: 4vw;
-    margin: 0;
-    align-content: center;
-    justify-content: center;
-  }
-  footer .contacto .info p {
-    margin: 0;
-  }
-
   .redes .info a {
-    width: 14vw;
-    height: 14vw;
-  }
-  .contacto .info p:nth-child(2) {
     font-size: 5vw;
   }
-
+  .redes .info {
+    gap: 5vw;
+  }
 }

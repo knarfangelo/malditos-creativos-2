@@ -9,6 +9,7 @@ nav {
   padding: 0.5vh;
   z-index: 100;
   top: 0;
+
 }
 
 nav a {
@@ -60,11 +61,200 @@ nav .menu a {
   width: 100%;
   height: 5vh;
 }
+
+.formulario {
+  top: 0;
+  display: flex;
+  position: relative;
+  height: 100vh;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 3vw;
+  position: fixed;
+  z-index: 100;
+  background-color: #fff;
+  overflow: auto;
+}
+.hagamoslo {
+  background-color: #EF4B4A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3vw;
+  border: 0;
+  padding: 0 1vw;
+  cursor: pointer;
+  color: #fff;
+}
+.f-info{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 50vw;
+  font-size: 1.5vw;
+  gap: 1.5vw;
+}
+
+.formulario h1, .formulario h2{
+  margin: 0 ;
+}
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+.formulario input{
+  display: flex;
+  width: 100%;
+  height: 4vw;
+  box-sizing: border-box;
+  border-radius: 5vw;
+  border: 0.1vw solid #000;
+  padding: 0.5vw 0;
+  padding-left: 1.5vw;
+}
+
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 10vw;
+  border-radius: 0.5vw;
+  padding: 1.5vw;
+}
+.enviar {
+  border-radius: 5vw;
+  height: 7vw;
+  margin-bottom: 2vw;
+  cursor: pointer;
+  background-color: #EF4B4A;
+  color: #fff;
+  border: 0;
+}
+
+.enviar:hover {
+  background-color: #f06464;
+}
+
+.finish-formulario{
+  transform: translateX(0vw);
+}
+
+.initial-formulario{
+  transform: translateX(-100vw);
+  transition: 3s;
+}
+.res-formulario {
+  display: flex;
+  width: 50vw;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2vw;
+}
+.cerrar {
+  font-size: 1.5vw;
+  top: 0;
+  width: 3vw;
+  height: 3vw;
+  position: absolute;
+  top: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: #EF4B4A;
+  color: #fff;
+  border-radius: 3vw;
+  right: 0;
+  margin: 4vw;
+}
+.selected {
+  background-color: #EF4B4A;
+  color: white;
+  border: 0.1vw solid #f06464;
+}
+.selector-1 button, .selector-2 button {
+  display: flex;
+  padding: 0 2vw;
+  display: flex;
+  height: 4.5vw;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-size: 1.5vw;
+  border-radius: 5vw;
+}
+
+.buttons{
+  display: flex;
+  gap: 1.5vw;
+}
+
 @media (max-width: 900px) {
+
+  .selector-1 button, .selector-2 button {
+    display: flex;
+    padding: 0 2vw;
+    display: flex;
+    height: 10vw;
+    
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 5vw;
+    border-radius: 5vw;
+    border: 0;
+  } 
+  .buttons {
+    flex-wrap: wrap;
+    font-size: 10vw;
+  }
+
   .space {
     display: flex;
   }
   nav {
     font-size: 3.5vw;
   }
+  .formulario {
+    width: 100vw;
+  }
+  .cerrar{
+    width: 15vw;
+    height: 15vw;
+    font-size: 8vw;
+    border-radius: 10vw;
+  }
+  .res-formulario {
+    font-size: 4vw;
+  }
+  .f-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6vw;
+    width: 100%;
+    height: auto;
+  }
+  .f-info label input {
+    display: flex;
+    width: 100%;
+    height: 13vw;
+  }
+  .f-info label textarea {
+    width: 100%;
+    height: 30vw;
+    border-radius: 5vw;
+  }
+  .f-info label {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 3vw;
+  }
+  .enviar {
+    font-size: 10vw;
+    width: 90%;
+    height: 15vw;
+  }
+
 }

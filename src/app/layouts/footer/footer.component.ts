@@ -6,33 +6,33 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   template: `
 
    <footer>
+    <section class="primer-panel">
         <section class="sitemap">
-          <p>SERVICIOS</p>
+          <p class="titulo">SERVICIOS</p>
           <section class="servicios">
-            <a href="creacion-contenido" target="_blank">Creacion de Contenido</a>
-            <a href="disenio-marca" target="_blank">Diseño de marca</a>
-            <a href="website" target="_blank">Website</a>
-            <a href="disenio-contenido" target="_blank">Diseño & Contenido</a>
+            <a href="creacion-contenido" target="_blank">Contenido</a>
+            <a href="disenio-marca" target="_blank">Diseño</a>
+            <a href="website" target="_blank">Web</a>
+            <a href="disenio-contenido" target="_blank">Pack digital</a>
           </section>
         </section>
         <section class="redes">
-          <p>REDES</p>
+          <p class="titulo">REDES</p>
           <section class="info">
-          <a href="https://x.com/AgenciaMalditos" target="_blank"><img src="redes/x.svg" alt=""></a>
-          <a href="https://www.tiktok.com/@malditoscreativosagencia" target="_blank"><img src="redes/tiktok.svg" alt=""></a>
-          <a href="https://www.youtube.com/@MalditosCreativosAgencia/shorts" target="_blank"><img src="redes/youtube.svg" alt=""></a>
-          <a href="https://www.instagram.com/malditoscreativosagencia/" target="_blank"><img src="redes/instagram.svg" alt=""></a>
+          <a href="https://x.com/AgenciaMalditos" target="_blank"><img src="redes/x.svg" alt="">AgenciaMalditos</a>
+          <a class="tiktok" href="https://www.tiktok.com/@malditoscreativosagencia" target="_blank"><img src="redes/tiktok.svg" alt="">&#64;malditoscreativosagencia</a>
+          <a class="youtube" href="https://www.youtube.com/@MalditosCreativosAgencia/shorts" target="_blank"><img src="redes/youtube.svg" alt="">&#64;MalditosCreativosAgencia</a>
+          <a class="instagram" href="https://www.instagram.com/malditoscreativosagencia/" target="_blank"><img src="redes/instagram.svg" alt="">malditoscreativosagencia</a>
           </section>
+    </section>
         </section>
         <section class="contacto">
           <div class="info">
-             <p>CONTACTO</p>
+             <p class="titulo">CONTACTO</p>
              <p>malditoscreativos&#64;gmail.com</p>
           </div>
         </section>
    </footer>
-
-  
   `,
   styleUrl: './footer.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

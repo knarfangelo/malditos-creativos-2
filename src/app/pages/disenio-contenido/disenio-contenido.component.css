@@ -80,9 +80,11 @@ swiper-slide img {
 
 .empresas img {
   width: 100%;
+  filter: grayscale(100%);
   box-sizing: border-box;
   padding: 1.5vw;
 }
+
 
 .diagrama h1 {
   padding: 3vw;
@@ -223,7 +225,7 @@ a,
   .numero {
     font-size: 40vw;
     font-weight: bold;
-    letter-spacing: -3.0vw;
+    letter-spacing: -2.0vw;
   }
   .empresas-aliadas h1 {
     font-size: 10vw;

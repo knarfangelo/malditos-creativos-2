@@ -66,6 +66,7 @@ header{
 .info p:nth-child(2){
   width: 10vw;
   font-size: 1vw;
+  margin-top: 1.6vw;
 }
 
 /* 🔸 Animación predeterminada */

@@ -61,8 +61,8 @@ main h2 {
 }
 
 swiper-slide p {
-  width: 50%;
-  text-transform: capitalize;
+  width: 70%;
+  font-size: 1.5vw;
 }
 
 @keyframes fadeInUp {

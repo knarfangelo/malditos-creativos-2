@@ -16,16 +16,16 @@ import { SwiperOptions } from 'swiper/types';
         <h2>{{ numero }}+</h2>
         <swiper-container #swiperFactos init="false">
           <swiper-slide>
-            <p>empresas que hemos ayudado a crecer en menos de 1 año</p>
+            <p>Empresas que hemos ayudado a crecer en menos de 1 año</p>
           </swiper-slide>
           <swiper-slide>
-            <p>(más de 2 millones de vistas) hemos logrado millones de reproducciones con nuestro contenido</p>
+            <p>(Más de 2 millones de vistas) hemos logrado millones de reproducciones con nuestro contenido</p>
           </swiper-slide>
           <swiper-slide>
-            <p>marcas personales e influencers que trabajan con nosotros</p>
+            <p>Marcas personales e influencers que trabajan con nosotros</p>
           </swiper-slide>
           <swiper-slide>
-            <p>páginas web realizadas</p>
+            <p>Páginas web realizadas</p>
           </swiper-slide>
         </swiper-container>
         <section class="buttons">
