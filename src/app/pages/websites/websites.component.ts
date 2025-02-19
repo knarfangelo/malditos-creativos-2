@@ -6,6 +6,7 @@ import { register } from 'swiper/element';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { FormularioService } from '../../services/Formulario.service';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,49 +22,27 @@ gsap.registerPlugin(ScrollTrigger);
         </section>
         <section class="planes">
           <div class="plan-1">
-            <h1>La Entradita (S/ 1199)</h1>
+            <h1>La Entradita</h1>
             <h2>Título: ¡Tu primera página web, al alcance de tu bolsillo!</h2>
             <p>Descripción:  Da el primer paso en el mundo digital con "La Entradita".  Una solución web sencilla y efectiva para tener tu presencia online sin complicaciones.  Ideal para mostrar tu trabajo, conectar con tus clientes y empezar a construir tu marca en internet.  ¡Una inversión inteligente para quienes buscan resultados rápidos y sin gastar una fortuna!</p>
             <p>Llamada a la acción:  ¡Pide tu Entradita Ahora!</p>
             <h3 class="numero">
               01
             </h3>
+            <button class="btn-form" (click)="abrirFormulario()">¡Pide tu cotización!</button>
+
           </div>
           <div class="plan-2">
-            <h1>El Menú Completo <br> (Desde S/ 2099)</h1>
+            <h1>El Menú Completo</h1>
             <h2>Todo lo que necesitas para un éxito online rotundo.</h2>
             <p> "El Menú Completo" te ofrece soluciones web integrales para llevar tu negocio al siguiente nivel.  Desde un sitio web corporativo profesional hasta una potente tienda online, te brindamos todas las herramientas para alcanzar tus objetivos.  Más visibilidad, más clientes, más ventas.</p>
             <p>¡Descubre el Menú Completo y elige la mejor opción para ti!</p>
             <h3 class="numero">
               02
     </h3>
+    <button class="btn-form" (click)="abrirFormulario()">¡Pide tu cotización!</button>
+
           </div>
-        </section>
-        <section class="swiper-websites">
-            <swiper-container slides-per-view="3" autoplay loop=true  breakpoints='{
-      "320": { "slidesPerView": 1 },
-      "640": { "slidesPerView": 2 },
-      "1024": { "slidesPerView": 3 }
-    }'>
-              <swiper-slide>
-                <img src="website-page/website-1.png" alt="">
-              </swiper-slide>
-              <swiper-slide>
-                <img src="website-page/website-2.png" alt="">
-              </swiper-slide>
-              <swiper-slide>
-                <img src="website-page/website-3.png" alt="">
-              </swiper-slide>
-              <swiper-slide>
-                <img src="website-page/website-4.png" alt="">
-              </swiper-slide>
-              <swiper-slide>
-                <img src="website-page/website-5.png" alt="">
-              </swiper-slide>
-              <swiper-slide>
-                <img src="website-page/website-6.png" alt="">
-              </swiper-slide>
-            </swiper-container>
         </section>
         <section class="diagrama">
           <h1>Asi es como crearemos tu Web</h1>
@@ -103,8 +82,7 @@ gsap.registerPlugin(ScrollTrigger);
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WebsitesComponent {
-
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private el: ElementRef) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private el: ElementRef, private formularioService:FormularioService) {}
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -126,5 +104,10 @@ export class WebsitesComponent {
       });
     }
   }
+
+  abrirFormulario() {
+    this.formularioService.abrirFormulario();
+  }
+
 
 }

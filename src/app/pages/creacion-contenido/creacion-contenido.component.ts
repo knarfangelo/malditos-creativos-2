@@ -6,6 +6,7 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { NavegacionComponent } from '../../layouts/navegacion/navegacion.component';
+import { FormularioService } from '../../services/Formulario.service';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,48 +22,57 @@ gsap.registerPlugin(ScrollTrigger);
         </section>
         <section class="planes">
           <div class="plan-1">
-            <h1>La Entradita (S/ 899)</h1>
+            <h1>La Entradita</h1>
             <h2> ¡Dale vida a tus redes sociales con contenido fresco y atractivo!</h2>
             <p>"La Entradita" te ofrece un paquete de contenido esencial para mantener tus redes sociales activas y enganchar a tu audiencia. Videos cortos, carruseles, historias… ¡todo lo que necesitas para empezar a generar impacto!</p>
             <p>¡Consigue tu Entradita de Creación de Contenido!</p>
             <h3 class="numero">
               01
             </h3>
+            <button class="btn-form" (click)="abrirFormulario()">¡Pide tu cotización!</button>
           </div>
           <div class="plan-2">
-            <h1>El Menú Completo (S/ 1699)</h1>
+            <h1>El Menú Completo</h1>
             <h2>¡Contenido profesional para redes sociales con grabación en estudio incluida!</h2>
             <p>"El Menú Completo" te lleva al siguiente nivel con una estrategia de contenido integral y la producción profesional de tus videos en nuestro estudio. Formato original,  equipos de alta calidad y un equipo experto para maximizar tu impacto en redes sociales.</p>
             <p> ¡Impulsa tu negocio con el Menú Completo!</p>
             <h3 class="numero">
               02
     </h3>
+    <button class="btn-form" (click)="abrirFormulario()">¡Pide tu cotización!</button>
           </div>
         </section>
+        <h1>Trabajamos con estos equipos</h1>
         <section class="swiper-websites">
             <swiper-container slides-per-view="3" autoplay loop=true  breakpoints='{
       "320": { "slidesPerView": 1 },
       "640": { "slidesPerView": 2 },
       "1024": { "slidesPerView": 3 }
     }'>
-              <swiper-slide>
-                <img src="website-page/website-1.png" alt="">
-              </swiper-slide>
-              <swiper-slide>
-                <img src="website-page/website-2.png" alt="">
-              </swiper-slide>
-              <swiper-slide>
-                <img src="website-page/website-3.png" alt="">
-              </swiper-slide>
-              <swiper-slide>
-                <img src="website-page/website-4.png" alt="">
-              </swiper-slide>
-              <swiper-slide>
-                <img src="website-page/website-5.png" alt="">
-              </swiper-slide>
-              <swiper-slide>
-                <img src="website-page/website-6.png" alt="">
-              </swiper-slide>
+    <swiper-slide>
+    <img src="equipos/1-blackmagic-pocket-cinema-6k-pro.webp" alt="Blackmagic Pocket Cinema 6K Pro">
+  </swiper-slide>
+  <swiper-slide>
+    <img src="equipos/2-sony-a72.webp" alt="Sony A72">
+  </swiper-slide>
+  <swiper-slide>
+    <img src="equipos/3-canon-eos-250d.webp" alt="Canon EOS 250D">
+  </swiper-slide>
+  <swiper-slide>
+    <img src="equipos/4-hollyland-lark-m2.webp" alt="Hollyland Lark M2">
+  </swiper-slide>
+  <swiper-slide>
+    <img src="equipos/4-microfonos-estudio.webp" alt="Micrófonos de Estudio">
+  </swiper-slide>
+  <swiper-slide>
+    <img src="equipos/5-dji-ronin-rs3-mini.webp" alt="DJI Ronin RS3 Mini">
+  </swiper-slide>
+  <swiper-slide>
+    <img src="equipos/5-rodecaster-pro-2.webp" alt="Rodecaster Pro 2">
+  </swiper-slide>
+  <swiper-slide>
+    <img src="equipos/6-blackmagic-atem-mini-pro.webp" alt="Blackmagic Atem Mini Pro">
+  </swiper-slide>
             </swiper-container>
         </section>
         <section class="diagrama">
@@ -102,7 +112,7 @@ gsap.registerPlugin(ScrollTrigger);
 })
 export class CreacionContenidoComponent {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private el: ElementRef) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private el: ElementRef, private formularioService:FormularioService) {}
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -123,6 +133,10 @@ export class CreacionContenidoComponent {
         });
       });
     }
+  }
+
+  abrirFormulario() {
+    this.formularioService.abrirFormulario();
   }
 
 }

@@ -14,7 +14,7 @@ import { AnimacionEntradaDirective } from '../../../directives/animacionEntrada.
   <h1>Servicios</h1>
   <header>
     <main>
-      <section class="card" appScrollAnimationServicios>
+<a href="creacion-contenido" class="card" appScrollAnimationServicios>
         <div class="contenedor">
           <h2>Creación de contenido</h2>
           <div class="info">
@@ -27,8 +27,8 @@ import { AnimacionEntradaDirective } from '../../../directives/animacionEntrada.
           </div>
         </div>
         <img appAnimacionEntrada [animacionClase]="'animacion-girar'" class="imagen" src="servicios/creacion-contenido.jpeg" alt="">
-      </section>
-      <section class="card" appScrollAnimationServicios>
+</a>
+      <a href="disenio-marca" class="card" appScrollAnimationServicios>
         <div class="contenedor">
           <h2>Diseño de <br> marca</h2>
           <div class="info">
@@ -40,8 +40,8 @@ import { AnimacionEntradaDirective } from '../../../directives/animacionEntrada.
           </div>
         </div>
         <img  appAnimacionEntrada [animacionClase]="'animacion-girar'" class="imagen" src="servicios/disenio-marca.jpeg" alt="">
-      </section>
-      <section class="card" appScrollAnimationServicios>
+</a>
+      <a href="website" class="card" appScrollAnimationServicios>
         <div class="contenedor">
           <h2>Website</h2>
           <div class="info">
@@ -55,17 +55,17 @@ import { AnimacionEntradaDirective } from '../../../directives/animacionEntrada.
           </div>
         </div>
         <img  appAnimacionEntrada [animacionClase]="'animacion-girar'" class="imagen" src="servicios/website.jpeg" alt="">
-      </section>
-      <section class="card" appScrollAnimationServicios>
+</a>
+      <a href="disenio-contenido" class="card" appScrollAnimationServicios>
         <div class="contenedor">
-          <h2>Diseño & <br> Contenido</h2>
+          <h2>Pack Digital</h2>
           <div class="info">
             <p>Our product design services focus on creating intuitive and aesthetically pleasing products that resonate with your audience and stand out in the market.</p>
             <p>UX Design, User Testing, Product Prototype, Mobile UI, Software UI design, Web app design, Interaction design</p>
           </div>
         </div>
         <img  appAnimacionEntrada [animacionClase]="'animacion-girar'" class="imagen" src="servicios/disenio-contenido.jpeg" alt="">
-      </section>  
+</a>  
     </main>
   </header>
 

@@ -13,13 +13,13 @@ import { SwiperOptions } from 'swiper/types';
     <header>
       <main>
         <p><strong>Factos</strong> {{ page }}/04</p>
-        <h2>{{ numero }}+</h2>
+        <h2>+{{ esSegundoSlide ? numero + 'M' : numero }}</h2>
         <swiper-container #swiperFactos init="false">
           <swiper-slide>
             <p>Empresas que hemos ayudado a crecer en menos de 1 año</p>
           </swiper-slide>
           <swiper-slide>
-            <p>(Más de 2 millones de vistas) hemos logrado millones de reproducciones con nuestro contenido</p>
+            <p>Hemos logrado millones de reproducciones con nuestro contenido</p>
           </swiper-slide>
           <swiper-slide>
             <p>Marcas personales e influencers que trabajan con nosotros</p>
@@ -48,8 +48,9 @@ export class PresentacionComponent {
   numero: number = 40;
   pageNumbers: string[] = ["01", "02", "03", "04"];
   page: string = this.pageNumbers[0];
-  numerosSlides: number[] = [40, 20, 15, 50];
+  numerosSlides: number[] = [40, 2, 15, 50];
   swiperInstance: any;
+  esSegundoSlide: boolean = false;
 
   @ViewChild("swiperFactos") swiperFactos!: ElementRef;
   @ViewChild("progressPrev") progressPrev!: ElementRef;
@@ -103,7 +104,18 @@ export class PresentacionComponent {
     const activeIndex = this.swiperInstance.realIndex;
     const targetNumber = this.numerosSlides[activeIndex] || 0;
     this.page = this.pageNumbers[activeIndex] || "01";
-    gsap.fromTo(this, { numero: 0 }, { numero: targetNumber, duration: 1.0, roundProps: "numero", ease: "power2.out", onUpdate: () => this.cdRef.detectChanges() });
+    
+    // Verificar si es el segundo slide (índice 1)
+    this.esSegundoSlide = activeIndex === 1;
+  
+    gsap.fromTo(this, { numero: 0 }, { 
+      numero: targetNumber, 
+      duration: 1.0, 
+      roundProps: "numero", 
+      ease: "power2.out", 
+      onUpdate: () => this.cdRef.detectChanges() 
+    });
+  
     this.iniciarCargaBorde();
   }
 
@@ -122,14 +134,23 @@ export class PresentacionComponent {
   }
 
   iniciarCargaBorde() {
+    // Detener cualquier animación previa en los elementos
+    gsap.killTweensOf([this.progressPrev.nativeElement, this.progressNext.nativeElement]);
+  
+    // Reiniciar el ancho a 0 antes de iniciar la nueva animación
+    gsap.set([this.progressPrev.nativeElement, this.progressNext.nativeElement], { width: '0%' });
+  
     gsap.to([this.progressPrev.nativeElement, this.progressNext.nativeElement], {
       width: '100%',
       duration: 4,
       ease: 'linear',
       onComplete: () => {
-        this.swiperInstance.slideNext();
-        this.iniciarCargaBorde();
+        if (this.swiperInstance) {
+          this.swiperInstance.slideNext();
+          this.iniciarCargaBorde(); // Reiniciar la animación para el siguiente slide
+        }
       },
     });
   }
+  
 }

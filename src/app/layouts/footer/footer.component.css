@@ -89,6 +89,28 @@ img {
   width: 4vw;
   padding: 0.5vw;
 }
+a {
+  clip-path: none !important;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  margin-top: 2vw;
+  justify-content: center;
+}
+.banner h1 {
+  display: flex;
+  font-size: 7.5vw;
+  align-items: center;
+  margin: 0;
+  padding: 1vw 0;
+}
+
+.banner h1 img {
+  width: 13vw;
+  height: 13vw;
+}
 
 @media (width < 900px) {
   footer {

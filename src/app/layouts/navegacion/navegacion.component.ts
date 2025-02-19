@@ -3,6 +3,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormularioService } from '../../services/Formulario.service';
 
 @Component({
   selector: 'app-navegacion',
@@ -15,10 +16,10 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
       <a class="titulo" href="#">Agencia de Marketing</a>
       <div class="sites" (click)="toggleMenu()">Menu</div>
       <div class="menu" [@menuAnimation]="menuAbierto ? 'visible' : 'oculto'">
-        <a href="/creacion-contenido">Creación de contenido</a>
-        <a href="/disenio-marca">Diseño de marca</a>
+        <a href="/creacion-contenido">Creación de Contenido</a>
+        <a href="/disenio-marca">Diseño de Marca</a>
         <a href="/website">Website</a>
-        <a href="/disenio-contenido">PACK DIGITAL</a>
+        <a href="/disenio-contenido">Pack Digital</a>
       </div>
     </nav>
 
@@ -108,7 +109,13 @@ export class NavegacionComponent {
     mensaje: new FormControl('', Validators.required)
   });
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2, private formularioService:FormularioService) {}
+
+  ngOnInit() {
+    this.formularioService.mostrarFormulario$.subscribe((estado) => {
+      this.cuadroVisible = estado;
+    });
+  }
 
   toggleMenu() {
     this.menuAbierto = !this.menuAbierto;

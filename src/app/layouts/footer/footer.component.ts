@@ -33,6 +33,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           </div>
         </section>
    </footer>
+   <section class="banner">
+        <h1>
+          MALDITOS <img src="icons/logo.svg" alt="logo del banner malditos creativos"> CREATIVOS
+        </h1>
+   </section>
   `,
   styleUrl: './footer.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
