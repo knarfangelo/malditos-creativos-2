@@ -127,4 +127,8 @@ swiper-slide p {
     font-size: 4vw;
   }
 
+  .video {
+    width: 100%;
+  }
+
 }

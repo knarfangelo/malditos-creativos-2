@@ -220,13 +220,19 @@ textarea {
     font-size: 4vw;
   }
 
+  textarea {
+    height: 20vw;
+  }
+
   .f-info {
     font-size: 5vw;
   }
   .f-info label input {
     height: 10vw;
   }
-
+  .enviar {
+    height: 10vw;
+  }
   .space {
     display: flex;
   }
