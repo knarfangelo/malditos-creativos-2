@@ -11,7 +11,7 @@ import { AnimacionEntradaDirective } from '../../../directives/animacionEntrada.
   selector: 'app-servicios',
   imports: [ScrollAnimationServiciosDirective, AnimacionEntradaDirective],
   template: `
-  <h1>Servicios</h1>
+  <h1 class="t-servicios">Servicios</h1>
   <header>
     <main>
 <a href="creacion-contenido" class="card" appScrollAnimationServicios>

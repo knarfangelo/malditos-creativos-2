@@ -113,6 +113,13 @@ a{
 
 @media (width < 900px){
 
+  header {
+    padding: 0;
+  }
+  .t-servicios {
+    font-size: 10vw;
+  }
+
   .card {
     display: flex;
     flex-direction: column;

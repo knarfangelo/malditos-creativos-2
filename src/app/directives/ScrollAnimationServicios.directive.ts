@@ -27,7 +27,7 @@ export class ScrollAnimationServiciosDirective {
               start: 'center 50%',
               end: 'center 30%',
               scrub: true,
-              markers: true,
+              markers: false,
             },
             y: -window.innerWidth * 0.15, // Mueve hacia arriba
             duration: 2,

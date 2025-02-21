@@ -6,7 +6,7 @@ import { ScrollAnimationDirective } from '../../../directives/ScrollAnimation.di
 
 @Component({
   selector: 'app-portafolio',
-  imports: [ScrollAnimationDirective],
+  imports: [],
   template: `
 <header>
 <h1 class="t-1">Influencers que representamos</h1>

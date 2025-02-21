@@ -83,7 +83,9 @@ swiper-slide p {
     flex-direction: column;
     flex-direction: column-reverse;
   }
-
+  main .t-1 {
+    font-size: 10vw;
+  }
   main{
     width: 95%;
   }
@@ -112,11 +114,12 @@ swiper-slide p {
 
   }
 
-  video {
-    width: 100%;
-    padding: 5vw 0;
+  .video {
+    width: 50vw;
+    display: flex;
+    transform: translateY(0vw) translateX(0vw);
   }
-
+  
 
   main h2 {
     font-size: 20vw;
@@ -129,6 +132,7 @@ swiper-slide p {
 
   .video {
     width: 100%;
+    margin: 5vw 0;
   }
 
 }

@@ -30,7 +30,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
           </div>
           <div class="caja" #caja6>
             <h1>Fatima</h1>
-            <p>Head of Copies,<strong>Social Media Manager</strong></p>
+            <p>Mucho Texto,<strong>Social Media Manager</strong></p>
           </div>
           <div class="caja" #caja7>
             <h1>Sergio</h1>
@@ -42,7 +42,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
           </div>
           <div class="caja" #caja9>
             <h1>Luis</h1>
-            <p>Hard Code, <strong>Senior Developer</strong></p>
+            <p>Codigo Locos, <strong>Senior Developer</strong></p>
           </div>
         </section>
       </header>

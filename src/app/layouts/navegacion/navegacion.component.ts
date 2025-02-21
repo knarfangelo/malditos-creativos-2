@@ -34,7 +34,7 @@ import { FormularioService } from '../../services/Formulario.service';
   <p>¿Qué podemos hacer por ti?</p>
   <div class="buttons">
   <button class="boton"
-    *ngFor="let opcion of ['Contenido', 'Diseño', 'Web', 'PACK DIGITAL']"
+    *ngFor="let opcion of ['Contenido', 'Diseño', 'Web', 'Pack Digital']"
     [class.selected]="seleccionServicios.includes(opcion)"
     (click)="toggleSeleccion(opcion)">
     {{ opcion }}
@@ -45,7 +45,7 @@ import { FormularioService } from '../../services/Formulario.service';
   <p>¿Cuál es tu rango de precio?</p>
   <div class="buttons">
   <button 
-    *ngFor="let precio of ['< 2000 S/', '2k - 3k S/', '3k - 4k S/', '4k - 5k S/']"
+    *ngFor="let precio of ['< 3000 S/', '3k - 4k S/', '4k - 5k S/']"
     [class.selected]="rangoPrecio === precio"
     (click)="seleccionarRango(precio)">
     <p>{{ precio }}</p>
@@ -61,6 +61,12 @@ import { FormularioService } from '../../services/Formulario.service';
             <input type="text" formControlName="correo" placeholder="Correo">
             @if (form.get('correo')?.invalid && form.get('correo')?.touched) {
               <div class="error-message">El correo es obligatorio</div>
+            }
+          </label>
+          <label>
+            <input type="text" formControlName="celular" placeholder="Celular">
+            @if (form.get('celular')?.invalid && form.get('celular')?.touched) {
+              <div class="error-message">El celular es obligatorio</div>
             }
           </label>
           <label>
@@ -106,7 +112,8 @@ export class NavegacionComponent {
   form = new FormGroup({
     nombre: new FormControl('', Validators.required),
     correo: new FormControl('', [Validators.required, Validators.email]),
-    mensaje: new FormControl('', Validators.required)
+    mensaje: new FormControl('', Validators.required),
+    celular: new FormControl('', Validators.required)
   });
 
   constructor(private el: ElementRef, private renderer: Renderer2, private formularioService:FormularioService) {}

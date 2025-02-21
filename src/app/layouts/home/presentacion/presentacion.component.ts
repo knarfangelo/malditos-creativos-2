@@ -12,7 +12,7 @@ import { SwiperOptions } from 'swiper/types';
   template: `
     <header>
       <main>
-        <p><strong>Factos</strong> {{ page }}/04</p>
+        <p class="t-1"><strong>Factos</strong> {{ page }}/04</p>
         <h2>+{{ esSegundoSlide ? numero + 'M' : numero }}</h2>
         <swiper-container #swiperFactos init="false">
           <swiper-slide>
@@ -65,21 +65,32 @@ export class PresentacionComponent {
     if (isPlatformBrowser(this.platformId)) {
       register();
       gsap.registerPlugin(ScrollTrigger);
-      gsap.to(".video", {
-        x: "0",
-        y: "0",
-        scale: 1.0,
-        duration: 3,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".video",
-          start: "top center",
-          end: "350% center",
-          scrub: true,
-          markers: false,
-        },
+      const mm = gsap.matchMedia();
+  
+      mm.add("(min-width: 1024px)", () => {
+        gsap.to(".video", {
+          x: "0",
+          y: "0",
+          scale: 1.0,
+          duration: 3,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".video",
+            start: "top center",
+            end: "350% center",
+            scrub: true,
+            markers: false,
+          },
+        });
       });
-
+  
+      // Elimina la animación en móviles
+      mm.add("(max-width: 1023px)", () => {
+        if (ScrollTrigger.getAll().length > 0) {
+          ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Desactiva todos los ScrollTriggers
+        }
+      });
+  
       const swiperParams: SwiperOptions = {
         slidesPerView: 1,
         loop: true,
@@ -88,10 +99,10 @@ export class PresentacionComponent {
           disableOnInteraction: false,
         },
       };
-
+  
       Object.assign(this.swiperFactos.nativeElement, swiperParams);
       this.swiperFactos.nativeElement.initialize();
-
+  
       setTimeout(() => {
         this.swiperInstance = this.swiperFactos.nativeElement.swiper;
         this.swiperInstance.on('slideChange', () => this.cambiarNumero());
@@ -99,13 +110,12 @@ export class PresentacionComponent {
       }, 100);
     }
   }
+  
 
   cambiarNumero() {
     const activeIndex = this.swiperInstance.realIndex;
     const targetNumber = this.numerosSlides[activeIndex] || 0;
     this.page = this.pageNumbers[activeIndex] || "01";
-    
-    // Verificar si es el segundo slide (índice 1)
     this.esSegundoSlide = activeIndex === 1;
   
     gsap.fromTo(this, { numero: 0 }, { 
@@ -134,12 +144,8 @@ export class PresentacionComponent {
   }
 
   iniciarCargaBorde() {
-    // Detener cualquier animación previa en los elementos
     gsap.killTweensOf([this.progressPrev.nativeElement, this.progressNext.nativeElement]);
-  
-    // Reiniciar el ancho a 0 antes de iniciar la nueva animación
     gsap.set([this.progressPrev.nativeElement, this.progressNext.nativeElement], { width: '0%' });
-  
     gsap.to([this.progressPrev.nativeElement, this.progressNext.nativeElement], {
       width: '100%',
       duration: 4,
@@ -147,10 +153,9 @@ export class PresentacionComponent {
       onComplete: () => {
         if (this.swiperInstance) {
           this.swiperInstance.slideNext();
-          this.iniciarCargaBorde(); // Reiniciar la animación para el siguiente slide
+          this.iniciarCargaBorde();
         }
       },
     });
   }
-  
 }

@@ -168,7 +168,7 @@ textarea {
   cursor: pointer;
   background-color: #EF4B4A;
   color: #fff;
-  border-radius: 3vw;
+  border-radius: 5vw;
   right: 0;
   margin: 1.5vw;
 }
@@ -231,7 +231,7 @@ textarea {
     height: 10vw;
   }
   .enviar {
-    height: 10vw;
+    min-height: 10vw;
   }
   .space {
     display: flex;
@@ -239,6 +239,9 @@ textarea {
   nav {
     font-size: 3.5vw;
   }
-
+  .hagamoslo {
+    padding: 3vw;
+    border-radius: 5vw;
+  }
 
 }
