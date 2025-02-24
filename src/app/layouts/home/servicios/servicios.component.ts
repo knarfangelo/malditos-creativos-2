@@ -59,9 +59,11 @@ import { AnimacionEntradaDirective } from '../../../directives/animacionEntrada.
       <a href="disenio-contenido" class="card" appScrollAnimationServicios>
         <div class="contenedor">
           <h2>Pack Digital</h2>
-          <div class="info">
-            <p>Our product design services focus on creating intuitive and aesthetically pleasing products that resonate with your audience and stand out in the market.</p>
-            <p>UX Design, User Testing, Product Prototype, Mobile UI, Software UI design, Web app design, Interaction design</p>
+          <div class="info"> 
+            <p>Potencia tu marca con una estrategia digital completa. Desde la creación de contenido hasta el diseño de tu identidad visual y página web, todo en un solo paquete pensado para hacer crecer tu negocio en el mundo digital.</p>
+            <p>Creación de contenido <br>
+               Diseño de marca <br>
+               Diseño web</p>
           </div>
         </div>
         <img  appAnimacionEntrada [animacionClase]="'animacion-girar'" class="imagen" src="servicios/disenio-contenido.jpeg" alt="">

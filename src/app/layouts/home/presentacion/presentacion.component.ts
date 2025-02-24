@@ -84,10 +84,9 @@ export class PresentacionComponent {
         });
       });
   
-      // Elimina la animación en móviles
       mm.add("(max-width: 1023px)", () => {
         if (ScrollTrigger.getAll().length > 0) {
-          ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Desactiva todos los ScrollTriggers
+          ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         }
       });
   
@@ -108,9 +107,28 @@ export class PresentacionComponent {
         this.swiperInstance.on('slideChange', () => this.cambiarNumero());
         this.iniciarCargaBorde();
       }, 100);
+  
+      this.forzarReproduccionVideo();
     }
   }
   
+  forzarReproduccionVideo() {
+    const video = document.querySelector(".video") as HTMLVideoElement;
+    if (video) {
+      video.setAttribute("playsinline", "true");
+      video.setAttribute("webkit-playsinline", "true");
+  
+      const intentarReproducir = (intentos: number = 10) => {
+        if (intentos <= 0) return;
+        video.play().catch(() => {
+          console.warn(`Intento de reproducción fallido, reintentando... (${10 - intentos + 1})`);
+          setTimeout(() => intentarReproducir(intentos - 1), 500);
+        });
+      };
+  
+      intentarReproducir();
+    }
+  }
 
   cambiarNumero() {
     const activeIndex = this.swiperInstance.realIndex;

@@ -62,17 +62,39 @@ header {
   transform: translateX(0) scale(1);
   transition: 10s;
 }
+.v-phone {
+  display: none;
+}
+
+
 
 
 @media (width < 900px) {
-  
+.contenedor {
+  padding: 10vw 0;
+}
+.v-phone {
+  display: block;
+  width: 50%;
+  margin-top: 5vw;
+  margin-bottom: 6vw;
+  height: auto;
+  border-radius: 5vw;
+}
+.videos {
+  display: none;
+  visibility: hidden;
+}
+.videos video {
+  display: none;
+}
 .caja{
   width: 100%;
-  height: 45vw;
+  height: auto;
 }
 
 header {
-  margin-bottom: 40vw;
+  margin-bottom: 0;
 }
 
 .caja h1 {
@@ -81,34 +103,11 @@ header {
   color: gray;
 }
 .caja p {
-  font-size: 8.5vw;
+  font-size: 7.0vw;
   margin: 0;
 }
-
-
-.videos {
-  position: fixed;
-  width: 70vw;
-  height: 90vw;
-  object-fit: cover;
-  object-position: bottom;
-  box-sizing: border-box;
-  padding: 5vw;
-  right: 0;
-  left: 0;
-  margin: auto;
-  margin-bottom: 0;
-  margin-right: 0;
-  transition: 10s;
-}
-
-.videos video {
-  width: 100%;
-  border-radius: 3vw;
-  height: 100%;
-  position: relative;
-  object-fit: cover;
-}
-
+.caja p strong {
+  font-weight: 100;
+};
 
 }
