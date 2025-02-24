@@ -67,8 +67,6 @@ header {
 }
 
 
-
-
 @media (width < 900px) {
 .contenedor {
   padding: 10vw 0;
@@ -84,9 +82,6 @@ header {
 .videos {
   display: none;
   visibility: hidden;
-}
-.videos video {
-  display: none;
 }
 .caja{
   width: 100%;

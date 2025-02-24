@@ -18,7 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
     <header>
     <app-navegacion></app-navegacion>
         <section class="panel-inicial">
-        <h1 class="titulo">CREACION DE CONTENIDO</h1>
+        <h1 class="titulo">CREACIÓN DE CONTENIDO</h1>
         </section>
         <section class="planes">
           <div class="plan-1">
@@ -33,7 +33,7 @@ gsap.registerPlugin(ScrollTrigger);
           </div>
           <div class="plan-2">
             <h1>El Menú Completo</h1>
-            <h2>¡Contenido profesional para redes sociales con grabación en estudio incluida!</h2>
+            <h2>¡Contenido profesional para redes sociales con grabación en estudio!</h2>
             <p>"El Menú Completo" te lleva al siguiente nivel con una estrategia de contenido integral y la producción profesional de tus videos en nuestro estudio. Formato original,  equipos de alta calidad y un equipo experto para maximizar tu impacto en redes sociales.</p>
             <p> ¡Impulsa tu negocio con el Menú Completo!</p>
             <h3 class="numero">
@@ -41,39 +41,6 @@ gsap.registerPlugin(ScrollTrigger);
     </h3>
     <button class="btn-form" (click)="abrirFormulario()">¡Pide tu cotización!</button>
           </div>
-        </section>
-        <h1>Trabajamos con estos equipos</h1>
-        <section class="swiper-websites">
-            <swiper-container slides-per-view="3" autoplay loop=true  breakpoints='{
-      "320": { "slidesPerView": 1 },
-      "640": { "slidesPerView": 2 },
-      "1024": { "slidesPerView": 3 }
-    }'>
-    <swiper-slide>
-    <img src="equipos/1-blackmagic-pocket-cinema-6k-pro.webp" alt="Blackmagic Pocket Cinema 6K Pro">
-  </swiper-slide>
-  <swiper-slide>
-    <img src="equipos/2-sony-a72.webp" alt="Sony A72">
-  </swiper-slide>
-  <swiper-slide>
-    <img src="equipos/3-canon-eos-250d.webp" alt="Canon EOS 250D">
-  </swiper-slide>
-  <swiper-slide>
-    <img src="equipos/4-hollyland-lark-m2.webp" alt="Hollyland Lark M2">
-  </swiper-slide>
-  <swiper-slide>
-    <img src="equipos/4-microfonos-estudio.webp" alt="Micrófonos de Estudio">
-  </swiper-slide>
-  <swiper-slide>
-    <img src="equipos/5-dji-ronin-rs3-mini.webp" alt="DJI Ronin RS3 Mini">
-  </swiper-slide>
-  <swiper-slide>
-    <img src="equipos/5-rodecaster-pro-2.webp" alt="Rodecaster Pro 2">
-  </swiper-slide>
-  <swiper-slide>
-    <img src="equipos/6-blackmagic-atem-mini-pro.webp" alt="Blackmagic Atem Mini Pro">
-  </swiper-slide>
-            </swiper-container>
         </section>
         <section class="diagrama">
           <h1>Ruta de creacion de contenido</h1>

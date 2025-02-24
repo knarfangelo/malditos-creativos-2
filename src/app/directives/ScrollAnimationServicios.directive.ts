@@ -27,9 +27,9 @@ export class ScrollAnimationServiciosDirective {
               start: 'center 50%',
               end: 'center 30%',
               scrub: true,
-              markers: false,
+              markers: true,
             },
-            y: -window.innerWidth * 0.15, // Mueve hacia arriba
+            y: -window.innerWidth * 0.20, // Mueve hacia arriba
             duration: 2,
           });
         },

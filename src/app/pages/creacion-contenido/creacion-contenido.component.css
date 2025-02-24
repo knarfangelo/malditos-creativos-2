@@ -24,18 +24,31 @@ header {
 
 .planes {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   padding: 3vw 0;
 }
-
+.planes::before {
+  content: ' ';
+  position: absolute;
+  display: flex;
+  width: 0.05vw;
+  background-color: gray;
+  height: 36vw;
+}
 .planes .plan-1, .planes .plan-2 {
   display: flex;
   flex-direction: column;
-  border-left: 0.1vw solid gray;
-  padding: 2vw;
+  padding: 0 7vw;
   position: relative;
 }
 
+.planes .plan-2{
+  border-right: 0.1vw solid gray;
+}
+.planes .plan-1 {
+  border-left: 0.1vw solid gray;
+}
 .numero {
   font-size: 10vw;
   margin: 0;
@@ -73,7 +86,7 @@ swiper-slide img {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: transparent;
   margin: 0 15vw;
   align-items: center;
   gap: 3.5vw;
@@ -127,6 +140,10 @@ a,
   text-align: justify;
 }
 
+.plan-1 p, .plan-2 p {
+  font-size: 1.2vw;
+}
+
 .plan-1 h1, .plan-2 h1 {
   font-size: 2vw;
 }
@@ -146,7 +163,7 @@ a,
   font-size: 1vw;
   position: absolute;
   bottom: 5vw;
-  right: 0;
+  right: 3vw;
   height: 3vw;
   display: flex;
   cursor: pointer;
@@ -156,6 +173,7 @@ a,
 swiper-slide img {
   border-radius: 1vw;
 }
+
 @media (width < 1100px){
 
   .btn-form {

@@ -30,7 +30,7 @@ import { AnimacionEntradaDirective } from '../../../directives/animacionEntrada.
 </a>
       <a href="disenio-marca" class="card" appScrollAnimationServicios>
         <div class="contenedor">
-          <h2>Diseño de <br> marca</h2>
+          <h2>Diseño de marca</h2>
           <div class="info">
             <p>Construye una identidad visual sólida y reconocible. Con un diseño de marca que transmite la personalidad de tu negocio y te diferencia de la competencia.</p>
             <p>Análisis de marca <br>
